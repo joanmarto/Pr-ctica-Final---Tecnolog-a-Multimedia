@@ -1,0 +1,13 @@
+.cabecera{
+    background-color: blue;
+    font-size: xx-large;
+}
+
+.button{
+    background-color: cyan;
+    padding: 1px;
+    border: 1px;
+    border-color: black;
+    height: 40px;
+    width: 200px;
+}
