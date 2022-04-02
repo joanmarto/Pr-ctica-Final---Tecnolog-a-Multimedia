@@ -1,0 +1,12 @@
+{
+    "noticia" :[
+        {
+            "identifier": "1",
+            "name": "Primera Noticia",
+            "image": "images/catedral.jpg",
+            "articleBody": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quam nam distinctio asperiores vero laborum ab cumque beatae doloribus quisquam sed ex sit quo totam unde incidunt, aliquam ducimus minus repellat ut doloremque! Eligendi impedit pariatur distinctio! Aliquam sapiente, laboriosam magnam quasi, pariatur recusandae natus esse dolores voluptatem corrupti explicabo odit vitae nemo suscipit obcaecati dolorum fugit quo provident expedita ipsum porro consectetur et. Cum fuga perferendis placeat accusamus quibusdam quis voluptas, quod dolorum reiciendis sit odio. Optio, exercitationem voluptas. Exercitationem alias iure assumenda id asperiores, odio adipisci soluta dolorem.",
+            "author": "Pau Bonet",
+            "datePublished": "Viernes 31 de febrero de 1912"
+        }
+    ]
+}
