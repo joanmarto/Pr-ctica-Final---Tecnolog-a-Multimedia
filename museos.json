@@ -1,5 +1,5 @@
 {
-    "museos" :[
+    "museo" :[
         {"identifier": "1",
             "name": "Castillo de Bellver", 
             "image": "images/Castillo_de_Bellver.jpg",
