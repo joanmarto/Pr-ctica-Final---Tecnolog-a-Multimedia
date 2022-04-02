@@ -2,12 +2,9 @@
 /*
 info relacionada con galeria imagenes
 */
-.grid{
+.container{
 
-    width: 1000px;
-    height: 500px;
-
-padding-left: 200px;
+  padding-bottom: 30px;
 }
 body {
     padding: 20px;
@@ -17,14 +14,17 @@ body {
   img {
     width: 100%; 
     height: auto;
+   
   }
   h2 {
     margin-bottom: .5em;
   }
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     grid-gap: 1em;
+    padding-left: 100px;
+    padding-bottom: 15px;
   }
   
   
@@ -36,12 +36,16 @@ body {
   .location-image {
     line-height: 0;
     overflow: hidden;
+    filter:brightness(40%);
+    border-radius: 20px;
+     
   }
   
   .location-image img {
     filter: blur(0px);
     transition: filter 0.3s ease-in;
     transform: scale(1.1);
+     
   }
   
   .location-title {
@@ -56,9 +60,9 @@ body {
     left: 0;
     opacity: 0;
     transition: opacity .5s;
-    background: rgba(90,0,10,0.4);
+    background: rgba(14, 4, 6, 0.4);
     color: white;
-    
+    border-radius: 20px;
     /*posicionar texto en medio*/
     display: flex;
     align-items: center;
@@ -67,6 +71,7 @@ body {
   
   .location-listing:hover .location-title {
     opacity: 1;
+    color:#f2f2f2;
   }
   
   .location-listing:hover .location-image img {
@@ -78,9 +83,10 @@ body {
   @media (hover: none) { 
     .location-title {
       opacity: 1;
+     
     }
     .location-image img {
       filter: blur(2px);
-      
+     
     }
   }
