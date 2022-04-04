@@ -1,92 +1,160 @@
-
+/*titulo*/
+.titulo{
+font-family: Arial;
+  font-weight: bolder ;
+  text-transform: uppercase;
+}
 /*
 info relacionada con galeria imagenes
 */
-.container{
+.container {
 
   padding-bottom: 30px;
 }
+
+.b-image {
+
+  padding-bottom: 70px;
+}
+
 body {
-    padding: 20px;
-    font-family: sans-serif;
-    background: #f2f2f2;
-  }
-  img {
-    width: 100%; 
-    height: auto;
-   
-  }
-  h2 {
-    margin-bottom: .5em;
-  }
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    grid-gap: 1em;
-    padding-left: 100px;
-    padding-bottom: 15px;
-  }
+  padding: 20px;
+  font-family: sans-serif;
+  background: linear-gradient(rgba(129, 128, 128, 0.7),rgba(129, 128, 128, 0.7)), url("images/catedral.jpg");
+
+/*background-image: url("images/catedral.jpg");*/
+
+}
+
+img {
+  width: 100%;
+  height: auto;
   
-  
-  /* hover styles */
-  .location-listing {
-    position: relative;
-  }
-  
-  .location-image {
-    line-height: 0;
-    overflow: hidden;
-    filter:brightness(40%);
-    border-radius: 20px;
-     
-  }
-  
-  .location-image img {
-    filter: blur(0px);
-    transition: filter 0.3s ease-in;
-    transform: scale(1.1);
-     
-  }
-  
+}
+
+h2 {
+  margin-bottom: .5em;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-gap: 1em;
+  padding-left: 60px;
+  padding-bottom: 15px;
+
+
+}
+
+
+/* hover styles */
+.location-listing {
+  position: relative;
+}
+
+.location-image {
+  line-height: 0;
+  overflow: hidden;
+  filter: brightness(40%);
+  border-radius: 20px;
+
+}
+
+.location-image img {
+  filter: blur(0px);
+  transition: filter 0.3s ease-in;
+  transform: scale(1.1);
+
+}
+
+.location-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .5s;
+  background: rgba(14, 4, 6, 0.4);
+  color: white;
+  border-radius: 20px;
+  /*posicionar texto en medio*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.location-listing:hover .location-title {
+  opacity: 1;
+  color: #f2f2f2;
+}
+
+.location-listing:hover .location-image img {
+  filter: blur(2px);
+}
+
+/*slider*/
+h5 {
+
+  color: white;
+  font-size: 250%;
+
+}
+
+h4 {
+  color: white;
+  font-size: 150%;
+
+}
+
+p {
+  color: white;
+  font-size: 150%;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 4vw;
+  height: 4vw;
+
+}
+ .img-slide{
+  filter: brightness(40%);
+  border-radius: 200px;
+ }
+
+/* para hacer hover de las imagenes */
+@media (hover: none) {
   .location-title {
-    font-size: 1.5em;
-    font-weight: bold;
-    text-decoration: none;
-    z-index: 1;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity .5s;
-    background: rgba(14, 4, 6, 0.4);
-    color: white;
-    border-radius: 20px;
-    /*posicionar texto en medio*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .location-listing:hover .location-title {
     opacity: 1;
-    color:#f2f2f2;
+
   }
-  
-  .location-listing:hover .location-image img {
+
+  .location-image img {
     filter: blur(2px);
+
   }
-  
-  
-  /* para hacer hover de las imagenes */
-  @media (hover: none) { 
-    .location-title {
-      opacity: 1;
-     
-    }
-    .location-image img {
-      filter: blur(2px);
-     
-    }
-  }
+
+
+}
+
+.video {
+  padding-top: 50px;
+  display: block;
+  margin: auto;
+
+
+}
+
+/*footer*/
+
+
+
+#page-content {
+  flex: 1 0 auto;
+}
