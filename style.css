@@ -1,9 +1,10 @@
 /*titulo*/
-.titulo{
-font-family: Arial;
-  font-weight: bolder ;
+.titulo {
+  font-family: Arial;
+  font-weight: bolder;
   text-transform: uppercase;
 }
+
 /*
 info relacionada con galeria imagenes
 */
@@ -20,16 +21,16 @@ info relacionada con galeria imagenes
 body {
   padding: 20px;
   font-family: sans-serif;
-  background: linear-gradient(rgba(129, 128, 128, 0.7),rgba(129, 128, 128, 0.7)), url("images/catedral.jpg");
+  background: linear-gradient(rgba(129, 128, 128, 0.7), rgba(129, 128, 128, 0.7)), url("images/catedral.jpg");
 
-/*background-image: url("images/catedral.jpg");*/
+  /*background-image: url("images/catedral.jpg");*/
 
 }
 
 img {
   width: 100%;
   height: auto;
-  
+
 }
 
 h2 {
@@ -123,10 +124,11 @@ p {
   height: 4vw;
 
 }
- .img-slide{
+
+.img-slide {
   filter: brightness(40%);
   border-radius: 200px;
- }
+}
 
 /* para hacer hover de las imagenes */
 @media (hover: none) {
@@ -149,6 +151,13 @@ p {
   margin: auto;
 
 
+}
+
+/*Mapa Google maps*/
+.map {
+  align-self: center;
+  margin: 10px;
+  padding: 15px;
 }
 
 /*footer*/
