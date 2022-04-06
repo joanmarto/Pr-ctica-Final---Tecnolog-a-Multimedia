@@ -4,26 +4,31 @@
   font-weight: bolder;
   text-transform: uppercase;
 }
-
+h2 {
+  font-size: 120%;
+ text-transform: lowercase;
+}
 /*
 info relacionada con galeria imagenes
 */
 .container {
 
   padding-bottom: 30px;
+  
 }
 
 .b-image {
 
   padding-bottom: 70px;
+ 
 }
 
 body {
   padding: 20px;
   font-family: sans-serif;
-  background: linear-gradient(rgba(129, 128, 128, 0.7), rgba(129, 128, 128, 0.7)), url("images/catedral.jpg");
+  /*background: linear-gradient(rgba(129, 128, 128, 0.7), rgba(129, 128, 128, 0.7)), url("images/catedral.jpg");*/
 
-  /*background-image: url("images/catedral.jpg");*/
+  background-color: white;
 
 }
 
@@ -33,15 +38,12 @@ img {
 
 }
 
-h2 {
-  margin-bottom: .5em;
-}
 
 .grid-container {
-  display: grid;
+  display:grid;
   grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   grid-gap: 1em;
-  padding-left: 60px;
+/*  padding-left: 60px;*/
   padding-bottom: 15px;
 
 
@@ -50,13 +52,13 @@ h2 {
 
 /* hover styles */
 .location-listing {
-  position: relative;
+  position:relative;
 }
 
 .location-image {
   line-height: 0;
   overflow: hidden;
-  filter: brightness(40%);
+ 
   border-radius: 20px;
 
 }
@@ -127,7 +129,8 @@ p {
 
 .img-slide {
   filter: brightness(40%);
-  border-radius: 200px;
+ width: auto;
+ height: 1000px;
 }
 
 /* para hacer hover de las imagenes */
@@ -149,8 +152,8 @@ p {
   padding-top: 50px;
   display: block;
   margin: auto;
-
-
+height: 100%;
+width: auto;
 }
 
 /*Mapa Google maps*/
@@ -165,5 +168,7 @@ p {
 
 
 #page-content {
-  flex: 1 0 auto;
+  flex:  0 auto;
 }
+/***************************************************************************************/
+/*castillo de bellver*/
