@@ -13,22 +13,34 @@ info relacionada con galeria imagenes
 */
 .container {
 
-  padding-bottom: 30px;
-  
+ /* padding-bottom: 30px;*/
+  margin: 10px;
+}
+
+#header{
+  margin: 0px;
 }
 
 .b-image {
+  padding: 10px;
+  /*padding-bottom: 70px;*/
+  text-align: center;
+  position: center;
+ /* background-color: rgb(37, 35, 35, .65);*/
+  
+}
+.galeria{
 
-  padding-bottom: 70px;
- 
+ margin-left: 220px;
+ margin-right: 300px;
 }
 
 body {
-  padding: 20px;
+ 
   font-family: sans-serif;
-  /*background: linear-gradient(rgba(129, 128, 128, 0.7), rgba(129, 128, 128, 0.7)), url("images/catedral.jpg");*/
+ background: linear-gradient(rgba(129, 128, 128, 0.7), rgba(129, 128, 128, 0.7)), url("images/catedral.jpg");
 
-  background-color: white;
+  /*background-color: white;*/
 
 }
 
@@ -45,7 +57,7 @@ img {
   grid-gap: 1em;
 /*  padding-left: 60px;*/
   padding-bottom: 15px;
-
+justify-content: center;
 
 }
 
@@ -60,14 +72,15 @@ img {
   overflow: hidden;
  
   border-radius: 20px;
-
+  
 }
+
 
 .location-image img {
   filter: blur(0px);
   transition: filter 0.3s ease-in;
   transform: scale(1.1);
-
+ 
 }
 
 .location-title {
@@ -102,6 +115,12 @@ img {
 }
 
 /*slider*/
+.slide{
+
+  margin: 50px;
+ 
+ 
+}
 h5 {
 
   color: white;
@@ -130,7 +149,8 @@ p {
 .img-slide {
   filter: brightness(40%);
  width: auto;
- height: 1000px;
+ height: 100%;
+ border-radius: 30px;
 }
 
 /* para hacer hover de las imagenes */
