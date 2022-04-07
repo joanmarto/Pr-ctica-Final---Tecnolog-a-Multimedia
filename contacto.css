@@ -16,13 +16,21 @@
 body {
 	font-family:"Open Sans", Helvetica, Arial, sans-serif;
 	font-weight:300;
-	font-size: 12px;
+	
 	line-height:30px;
-	color:#777;
+	color:black;
 	background:#0CF;
+
+    font-family: sans-serif;
+   /*background: linear-gradient(rgba(129, 128, 128, 0.7), rgba(129, 128, 128, 0.7)), url("images/catedral.jpg");*/
+   background-image: url("images/catedral.jpg");
+	  
+		
+	  
+	 
 }
 
-.container {
+.contenedor {
 	max-width:400px;
 	width:100%;
 	margin:0 auto;
