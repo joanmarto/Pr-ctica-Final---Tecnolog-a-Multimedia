@@ -155,10 +155,11 @@ p {
 
 .video {
   padding-top: 50px;
+  padding-left:400px;
   display: block;
   height: 300px;
-  width: 500px;
-  position: center;
+  right: inherit;
+  
 }
 
 /*Mapa Google maps*/
