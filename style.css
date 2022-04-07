@@ -38,7 +38,7 @@ body {
  
   font-family: sans-serif;
  /*background: linear-gradient(rgba(129, 128, 128, 0.7), rgba(129, 128, 128, 0.7)), url("images/catedral.jpg");*/
- background: linear-gradient(rgba(129, 128, 128, 0.7), rgba(129, 128, 128, 0.7)), url("images/catedral.jpg");
+ background-image:  url("images/catedral.jpg");
   /*background-color: white;*/
 
 }
@@ -194,4 +194,12 @@ width: auto;
 
 #page-content {
   flex: 0 auto;
+}
+/*castell de bellver*/
+.margen{
+width: 700px;
+
+}
+.margen_1{
+  padding-right: 200px;
 }
