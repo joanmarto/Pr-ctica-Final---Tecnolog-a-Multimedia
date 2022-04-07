@@ -8,15 +8,12 @@ h2 {
   font-size: 120%;
  text-transform: lowercase;
 }
-/*
-info relacionada con galeria imagenes
-*/
-.container {
 
+/*info relacionada con galeria imagenes*/
+
+.container {
  /* padding-bottom: 30px;*/
   margin: 10px;
-  padding-left: 100px;
-  
 }
 
 #header{
