@@ -63,6 +63,12 @@ justify-content: center;
 
 }
 
+.description-container{
+  display:grid;
+  grid-template-columns: repeat( auto-fill, minmax(800px, 2fr));
+  grid-gap: 1em;
+  justify-content: center;
+}
 
 /* hover styles */
 .location-listing {
