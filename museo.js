@@ -3,6 +3,7 @@ var id = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.
 id = id.replace("?", "");
 console.log(id);
 
+let museos;
 
 const xhttp = new XMLHttpRequest();
 xhttp.open('GET', 'museos.json', true)
@@ -11,7 +12,7 @@ xhttp.onreadystatechange = function () {
 
 
   if (this.readyState == 4 && this.status == 200) {
-    let museos = JSON.parse(this.responseText);
+    museos = JSON.parse(this.responseText);
 
     //api google maps para mostrar la posición del museo
     var coord = { lat: Number(museos[id]["latitude"]), lng: Number(museos[id]["longitude"]) };
@@ -117,8 +118,16 @@ xhttp.onreadystatechange = function () {
 
 }
 
+//Buscador de museos
+const formulario = document.querySelector('#formulario');
+const search = document.querySelector('#search');
 
+const buscar = ()=>{
+  //console.log(buscador.value);
+  //const text = formulario.ariaValueMax.toLowerCase();
+  for (let museo of museos){
+    console.log(museo);
+  }
+}
 
-
-
-
+search.addEventListener('click', buscar)
