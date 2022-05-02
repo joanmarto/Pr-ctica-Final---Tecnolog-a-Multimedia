@@ -10,7 +10,7 @@ xhttp.onreadystatechange = function () {
 
 
     let museos = JSON.parse(this.responseText);
-   
+
     var options = {
       enableHighAccuracy: true,
       timeout: 5000,
@@ -21,7 +21,7 @@ xhttp.onreadystatechange = function () {
       var crd = pos.coords;
       var distancias = [museos.length];
       var distanciasAux = [museos.length];
-     
+
 
       //funcion para calcular distancias entre ubicacion actual y museos
       function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
@@ -41,29 +41,39 @@ xhttp.onreadystatechange = function () {
       function deg2rad(deg) {
         return deg * (Math.PI / 180)
       }
-   //se callculan todas las distancias entre museos y ubicacion actual
+      //se callculan todas las distancias entre museos y ubicacion actual
       for (var i = 0; i < museos.length; i++) {
         var km = getDistanceFromLatLonInKm(crd.latitude, crd.longitude, museos[i]["latitude"], museos[i]["longitude"])
-       
-        distancias[i]=km;
-        distanciasAux[i]=km;
+
+        distancias[i] = km;
+        distanciasAux[i] = km;
       }
       //ordenamos distancias
-      distancias.sort((a, b) => a - b);   
+      distancias.sort((a, b) => a - b);
       for (var i = 0; i < distancias.length; i++) {
-  console.log(distancias[i]);
+        console.log(distancias[i]);
       }
-      for (var i = 0; i < distancias.length; i++) {
-      if(distancias[0]== distanciasAux[i]){
-
+      for (var i = 0; i < distanciasAux.length; i++) {
+        console.log(distanciasAux[i]);
+      }
+      
+      
+      for (var x = 0; x < 4; x++) {
         
+        for (var i = 0; i < distancias.length; i++) {
+         
+          if (distancias[x] == distanciasAux[i]) {
+           
+            document.getElementById("titulo_galeria_index"+x.toString()).innerHTML = museos[i]["name"];
+            document.getElementById("foto_galeria_index"+x.toString()).src = museos[i]["image"];
+            document.getElementById("titulo_galeria_index"+x.toString()).href = "museo.html?"+i.toString();
+
+
+          }
+
+        }
       }
-      document.getElementById("titulo_museo").innerHTML=museos[id]["name"];
-      document.getElementById("descripcion_museo").innerHTML=museos[id]["description"];
-      document.getElementById("imagen_museo").src=museos[id]["image"];
     }
-    };
-   
 
     function error(err) {
       console.warn('ERROR(' + err.code + '): ' + err.message);
