@@ -31,6 +31,13 @@ xhttp.onreadystatechange = function () {
     document.getElementById("descripcion_museo").innerHTML = museos[id]["description"];
     document.getElementById("imagen_museo").src = museos[id]["image"];
 
+    document.getElementById("direccion").innerHTML = museos[id]["address"];
+    document.getElementById("apertura").innerHTML = museos[id]["openingHoursSpecification"];
+    document.getElementById("telefono").innerHTML = museos[id]["telephone"];
+    document.getElementById("email").innerHTML = museos[id]["email"];
+    document.getElementById("web").innerHTML = museos[id]["sameAs"];
+
+
     //api tiempo
     window.addEventListener('load', () => {
       let lon;
@@ -63,7 +70,7 @@ xhttp.onreadystatechange = function () {
 
           //console.log(data.weather[0].description)
           let desc = data.weather[0].description
-          temperaturaDescripcion.textContent = desc.toUpperCase()
+         // temperaturaDescripcion.textContent = desc.toUpperCase()
           ubicacion.textContent = data.name
 
           vientoVelocidad.textContent = `${data.wind.speed} m/s`
@@ -75,35 +82,43 @@ xhttp.onreadystatechange = function () {
           switch (data.weather[0].main) {
             case 'Thunderstorm':
               iconoAnimado.src = 'animated/thunder.svg'
-              console.log('TORMENTA');
+              //console.log('TORMENTA');
+              temperaturaDescripcion.textContent = 'TORMENTA';
               break;
             case 'Drizzle':
               iconoAnimado.src = 'animated/rainy-2.svg'
               console.log('LLOVIZNA');
+              temperaturaDescripcion.textContent = 'LLOVIZNA';
               break;
             case 'Rain':
               iconoAnimado.src = 'animated/rainy-7.svg'
               console.log('LLUVIA');
+              temperaturaDescripcion.textContent = 'LLUVIA';
               break;
             case 'Snow':
               iconoAnimado.src = 'animated/snowy-6.svg'
               console.log('NIEVE');
+              temperaturaDescripcion.textContent = 'NIEVE';
               break;
             case 'Clear':
               iconoAnimado.src = 'animated/day.svg'
               console.log('LIMPIO');
+              temperaturaDescripcion.textContent = 'DESPEJADO';
               break;
             case 'Atmosphere':
               iconoAnimado.src = 'animated/weather.svg'
               console.log('ATMOSFERA');
+              temperaturaDescripcion.textContent = 'VIENTO';
               break;
             case 'Clouds':
               iconoAnimado.src = 'animated/cloudy-day-1.svg'
               console.log('NUBES');
+              temperaturaDescripcion.textContent = 'NUBES';
               break;
             default:
               iconoAnimado.src = 'animated/cloudy-day-1.svg'
               console.log('por defecto');
+              temperaturaDescripcion.textContent = 'NUBES';
           }
 
         })
@@ -119,6 +134,7 @@ xhttp.onreadystatechange = function () {
 }
 
 //Buscador de museos
+/*
 const formulario = document.querySelector('#formulario');
 const search = document.querySelector('#search');
 
@@ -130,4 +146,4 @@ const buscar = ()=>{
   }
 }
 
-search.addEventListener('click', buscar)
+search.addEventListener('click', buscar)*/
