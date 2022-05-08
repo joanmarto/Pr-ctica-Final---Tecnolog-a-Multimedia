@@ -77,7 +77,12 @@ xhttp.onreadystatechange = function () {
     //Creamos el mapa
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 10,
-      center: position  //Posición del cliente
+      center: navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };})  //Posición del cliente
     });
 
     //Añadimos el mapa
