@@ -68,14 +68,16 @@ xhttp.onreadystatechange = function () {
       console.log("Museo " + museos[i]["name"] + " -> lat: " + coord[i].lat + ", long: " + coord[i].lng);
     }
 
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };})
     //Creamos el mapa
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 10,
-      //center: navigator.geolocation.getCurrentPosition(success, error, options) //Posición del cliente
-      center: {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      }
+      center: position  //Posición del cliente
     });
 
     //Añadimos el mapa
