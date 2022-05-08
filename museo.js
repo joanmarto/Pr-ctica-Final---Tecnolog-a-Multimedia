@@ -1,6 +1,7 @@
 //para escoger el museo en cuestion
 var id = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.document.URL.length);
 id = id.replace("?", "");
+id = id.replace("#", "");
 console.log(id);
 
 let museos;
