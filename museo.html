@@ -49,10 +49,12 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="noticias.html">Noticias</a>
             </li>
-            <form class="d-flex">
-              <input id="formulario" class="form-control me-2" type="search" placeholder="Buscar museo"
-                aria-label="Search">
-              <button id="search" class="btn btn-outline-success" type="submit">Buscar</button>
+            <form class="d-flex" autocomplete="off">
+              <div class="autocompletado" style="width:300px;">
+                <input id="buscador" class="form-control me-2" type="text" placeholder="Buscar museo"
+                  aria-label="Search">
+              </div>
+              <input class="btn btn-outline-success" id="enviar" type="submit">
             </form>
           </ul>
         </div>

@@ -106,7 +106,7 @@ function autocomplete(inp, arr) {
         } else {
             //Cargamos la página del museo seleccionado
             let url = window.location.protocol + window.location.hostname + "/museo.html?" + pos;
-            //alert(url);
+            alert(url);
             location.assign(url);
         }
     });
