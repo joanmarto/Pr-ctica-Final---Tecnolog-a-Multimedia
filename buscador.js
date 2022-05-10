@@ -105,7 +105,7 @@ function autocomplete(inp, arr) {
             alert("Escribe el nombre de un museo válido")
         } else {
             //Cargamos la página del museo seleccionado
-            let url = window.location.protocol + window.location.hostname + `/museo.html?${pos}`;
+            let url = `/museo.html?${pos}`;
             alert(url);
             alert(window.location.href);
             //location.assign(url);
