@@ -102,7 +102,7 @@ function autocomplete(inp, arr) {
             }
         }
         //Cargamos la página del museo seleccionado
-        let url = window.location.hostname + "museo.html?" + pos;
+        let url = window.location.hostname + "/museo.html?" + pos;
         alert(url);
         window.location.assign(url);
     });
