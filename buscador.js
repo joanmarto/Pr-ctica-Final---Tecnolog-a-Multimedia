@@ -9,7 +9,7 @@ xhttp_search.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         museos = JSON.parse(this.responseText);
 
-        for(var i = 0; i < museos.length; i++){
+        for (var i = 0; i < museos.length; i++) {
             nom_museos[i] = museos[i]["name"];
             console.log(nom_museos[i]);
         }
@@ -93,25 +93,39 @@ function autocomplete(inp, arr) {
         closeAllLists(e.target);
     });
 
-    document.getElementById("enviar").addEventListener("click", function(e){
+    document.getElementById("enviar").addEventListener("click", function (e) {
         //Buscamos la posición del museo seleccionado en el JSON
         var pos;
-        for(pos = 0; pos < museos.length; pos++){
-            if(equals(museos[pos]["name"], selected)){
+        for (pos = 0; pos < museos.length; pos++) {
+            if (equals(museos[pos]["name"], selected)) {
                 break;
             }
         }
         //Cargamos la página del museo seleccionado
-        let url = "museo.html?"+pos;
-        window.location.href = url;
+        let url = window.location.hostname + "museo.html?" + pos;
+        alert(url);
+        window.location.assign(url);
     });
 }
 
+function enviar() {
+    var pos;
+    for (pos = 0; pos < museos.length; pos++) {
+        if (equals(museos[pos]["name"], selected)) {
+            break;
+        }
+    }
+    //Cargamos la página del museo seleccionado
+    let url = "museo.html?" + pos;
+    
+    window.location.href = url;
+}
+
 //Función para comparar si 2 strings son iguales
-function equals (str1, str2){
-    if(str1.startsWith(str2) && str1.endsWith(str2)){
+function equals(str1, str2) {
+    if (str1.startsWith(str2) && str1.endsWith(str2)) {
         return true;
-    }else{
+    } else {
         return false;
     }
 }
