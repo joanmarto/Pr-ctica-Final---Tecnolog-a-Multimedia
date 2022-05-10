@@ -101,24 +101,15 @@ function autocomplete(inp, arr) {
                 break;
             }
         }
-        //Cargamos la página del museo seleccionado
-        let url = window.location.protocol + window.location.hostname + "/museo.html?" + pos;
-        alert(url);
-        window.location.assign(url);
-    });
-}
-
-function enviar() {
-    var pos;
-    for (pos = 0; pos < museos.length; pos++) {
-        if (equals(museos[pos]["name"], selected)) {
-            break;
+        if (pos == museos.length) { //Error
+            alert("Escribe el nombre de un museo válido")
+        } else {
+            //Cargamos la página del museo seleccionado
+            let url = window.location.protocol + window.location.hostname + "/museo.html?" + pos;
+            //alert(url);
+            location.assign(url);
         }
-    }
-    //Cargamos la página del museo seleccionado
-    let url = "museo.html?" + pos;
-
-    window.location.href = url;
+    });
 }
 
 //Función para comparar si 2 strings son iguales

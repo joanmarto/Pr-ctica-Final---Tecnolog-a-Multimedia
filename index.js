@@ -13,7 +13,7 @@ xhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
 
     let museos = JSON.parse(this.responseText);
-    
+
     var options = {
       enableHighAccuracy: true,
       timeout: 5000,
@@ -69,7 +69,7 @@ xhttp.onreadystatechange = function () {
     }
 
     //Creamos el mapa
-    var uib = {lat: 39.637464, lng: 2.644435} //Coordenadas uib
+    var uib = { lat: 39.637464, lng: 2.644435 } //Coordenadas uib
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 10,
       /*
@@ -85,7 +85,7 @@ xhttp.onreadystatechange = function () {
 
     //Añadimos los marcadores de los museos
     var marker = [];
-    for(var i = 0; i < museos.length; i++){
+    for (var i = 0; i < museos.length; i++) {
       marker[i] = new google.maps.Marker({
         position: coord[i],
         map: map,
@@ -119,8 +119,7 @@ function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
   var a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
     Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
-    Math.sin(dLon / 2) * Math.sin(dLon / 2)
-    ;
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   var d = R * c; // Distance in km
   return d;
