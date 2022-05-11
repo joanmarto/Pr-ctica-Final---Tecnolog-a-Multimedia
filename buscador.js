@@ -109,8 +109,8 @@ function autocomplete(inp, arr) {
             alert(url);
             alert(window.location.href);
             //location.assign(url);
-            window.location.href = url;
-            alert(window.location.href);
+            //window.location.href = url;
+            window.location.assign(url);
         }
         return false;
     });
