@@ -110,7 +110,7 @@ function autocomplete(inp, arr) {
             alert("location.href: " + window.location.href);
             //location.assign(url);
             //window.location.href = url;
-            window.location.assign(`/museo.html?${pos}`);
+            window.location.assign(`museo.html?${pos}`);
         }
         return false;
     });
