@@ -106,11 +106,11 @@ function autocomplete(inp, arr) {
         } else {
             //Cargamos la página del museo seleccionado
             let url = `/museo.html?${pos}`;
-            alert(url);
-            alert(window.location.href);
+            alert("URL: " + url);
+            alert("location.href: " + window.location.href);
             //location.assign(url);
             //window.location.href = url;
-            window.location.assign(url);
+            window.location.assign(`/museo.html?${pos}`);
         }
         return false;
     });
