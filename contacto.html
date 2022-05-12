@@ -26,10 +26,10 @@
    <!--navbar-->
   <!-- Navigation -->
   <header id="header">
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark  static-top">
+    <nav class="navbar navbar-expand-lg  navbar-dark  static-top">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <img src="images/icono.png" height="36">
+          <img src="images/icono.svg" height="36">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,24 +66,24 @@
 
     <!--formulario-->
     <div class="contenedor">  
-        <form id="contact" action="" method="post">
+        <form id="contact" action="https://formsubmit.co/fdd6cfa3ec15c90ce6b9a001f75b1f1c" method="POST">
          
           <h4>Contactanos y te responderemos a tu correo en el menor tiempo posible!!</h4>
           <fieldset>
-            <input placeholder="Nombre" type="text" tabindex="1" required autofocus>
+            <input placeholder="Nombre" name="Nombre" type="text" tabindex="1" required autofocus>
           </fieldset>
           <fieldset>
-            <input placeholder="Dirección de correo" type="email" tabindex="2" required>
+            <input placeholder="Dirección de correo" name="Dirección de correo" type="email" tabindex="2" required>
           </fieldset>
           <fieldset>
-            <input placeholder="Número de telefono" type="tel" tabindex="3" required>
+            <input placeholder="Número de telefono" name="Número de telefono" type="tel" tabindex="3" >
           </fieldset>
          
           <fieldset>
-            <textarea placeholder="Escribe aquí tu mensaje...." tabindex="5" required></textarea>
+            <textarea placeholder="Escribe aquí tu mensaje...." name="mensaje" tabindex="4" required></textarea>
           </fieldset>
           <fieldset>
-            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Enviar</button>
+            <button  type="submit" id="contact-submit" data-submit="...Sending">Enviar</button>
           </fieldset>
         </form>
        

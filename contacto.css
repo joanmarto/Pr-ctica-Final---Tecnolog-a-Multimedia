@@ -12,7 +12,10 @@
 	font-smooth:antialiased;
 	text-rendering:optimizeLegibility;
 }
-
+.navbar{
+	background-color: rgba(27,32, 36);
+	
+	}
 body {
 	font-family:"Open Sans", Helvetica, Arial, sans-serif;
 	font-weight:300;
