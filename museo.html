@@ -11,11 +11,12 @@
   <link type="text/css" rel="stylesheet" href="museo.css">
 
   <script src="museo.js"></script>
-  <script src="buscador.js"></script>
+ 
   <title></title>
 </head>
 
 <body>
+
 
   <!-- Bootstrap  -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -26,10 +27,10 @@
   <!-- Navigation -->
 
   <header id="header">
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark navbar-nav  static-top">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-nav  static-top">
       <div class="container">
         <a class="navbar-brand " href="#">
-          <img src="images/icono.png" height="36">
+          <img src="images/icono.svg" height="36">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,14 +50,13 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="noticias.html">Noticias</a>
             </li>
-            <form class="d-flex" autocomplete="off">
-              <div class="autocompletado" style="width:300px;">
-                <input id="buscador" class="form-control me-2" type="text" placeholder="Buscar museo"
-                  aria-label="Search">
-              </div>
-              <input class="btn btn-outline-success" id="enviar" type="submit">
+            <form class="d-flex">
+              <input id="formulario" class="form-control me-2" type="search" placeholder="Buscar museo"
+                aria-label="Search">
+              <button id="search" class="btn btn-outline-success" type="submit">Buscar</button>
             </form>
           </ul>
+
         </div>
       </div>
     </nav>
@@ -70,87 +70,110 @@
       <h1 class="mt-4 titulo" id="titulo_museo">titulo</h1>
     </div>
     <!--imagen y texto museo-->
-    <div class="espacio">
-    </div>
+    <div class="espacio"></div>
 
     <div class="bloque1">
       <h2 id="descripcion_museo">descripcion</h2>
     </div>
 
-    <div class="espacio">
-    </div>
+    <div class="espacio"></div>
 
     <div class="bloque2 ">
+
       <img id="imagen_museo" src="images/Castillo_de_Bellver.jpg"> </a>
-    </div>
 
-    <div class="espacio">
     </div>
+    <div class="espacio"></div>
 
-    <!--video-->
+   
+    <!--video youtube-->
+    <div class="responsive">
+    <iframe class="videoyt" id="video"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="espacio"></div>
+
+
+
+
+
 
     <!--final bloque1-->
   </div>
   <div class="espacio">
-  </div>
 
+  </div>
   <!--inicio bloque2-->
   <div class="bloque_principal">
-    <!--informacion del museo-->
+  
+   
+<!--informacion del museo-->
+    
+<div class="titulo_centrado">
+  <h1 class="titulo">Información del museo</h1>
+</div>
+  <div id="contenedor">
+    <div id="caja1">
+    
 
-    <div class="titulo_centrado">
-      <h1 class="titulo">Información del museo</h1>
+      <h1>Fecha de apertura</h1>
+      <h3 id="apertura"></h3>
+      <div class="espacio_1"></div>
+
+      <h1>Correo electrónico</h1>
+      <h3 id="email"></h3>
+      <div class="espacio_1"></div>
+
+      <h1>Página web</h1>
+      <h3 id="web"></h3>
+      <div class="espacio_1"></div>
+
+      <h1>Teléfono</h1>
+      <h3 id="telefono"></h3>
+      <div class="espacio_1"></div>
+
+      <h1>Dirección</h1>
+      <h3 id="direccion"></h3>
+    
+      
+      
     </div>
-    <div id="contenedor">
-      <div id="caja1">
-        <h1>Fecha de apertura</h1>
-        <h3 id="apertura"></h3>
-        <div class="espacio_1"></div>
+   
 
-        <h1>Correo electrónico</h1>
-        <h3 id="email"></h3>
-        <div class="espacio_1"></div>
+  </div>
 
-        <h1>Página web</h1>
-        <h3>
-          <a id="web"></a>
-        </h3>
-        <div class="espacio_1"></div>
+  <!--map-->
 
-        <h1>Teléfono</h1>
-        <h3 id="telefono"></h3>
-        <div class="espacio_1"></div>
+  <div class="map">
 
-        <h1>Dirección</h1>
-        <h3 id="direccion"></h3>
-      </div>
-    </div>
+   
+   
+    <div id="map"></div>
+  </div>
 
-    <!--map-->
-    <div class="map">
-      <div id="map"></div>
-    </div>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik"></script>
-
-    <div class="espacio">
-    </div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik"></script> 
+ 
+  <div class="espacio"></div>
     <!--final bloque2-->
   </div>
 
-  <div class="espacio">
-  </div>
 
+  <div class="espacio"></div>
   <!--inicio bloque3-->
   <div class="bloque_principal_2">
-
     <!--api tiempo-->
+
     <div class="titulo_centrado">
       <h1 class="titulo">Tiempo</h1>
     </div>
 
+
+
+
     <div id="contenedor">
       <div id="caja1">
+      
+
         <h3>Tipo de día</h3>
         <h1 id="temperatura-descripcion"></h1>
         <img id="icono-animado">
@@ -167,22 +190,35 @@
         <h3>Velocidad del Viento</h3>
         <h1 id="viento-velocidad"></h1>
       </div>
+
     </div>
+
     <!--final bloque3-->
   </div>
 
-  <div class="espacio">
-  </div>
+  <div class="espacio"></div>
+
+ 
+
+
+
 
   <!--redes sociales-->
   <div class="socialmedia">
   </div>
 
+
+
+
+
+
   <!--footer-->
+
   <body class="d-flex flex-column">
     <div id="page-content">
       <div class="container text-center">
         <div class="row justify-content-center">
+
         </div>
       </div>
     </div>
@@ -192,5 +228,7 @@
       </div>
     </footer>
   </body>
+
 </body>
+
 </html>
