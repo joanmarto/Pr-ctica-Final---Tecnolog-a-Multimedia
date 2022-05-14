@@ -2,7 +2,6 @@
 var id = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.document.URL.length);
 id = id.replace("?", "");
 id = id.replace("#", "");
-console.log(id);
 
 var museos;
 
@@ -39,52 +38,45 @@ function error(err) {
 };
 
 //Función para mostrar los museos más cercanos
-function addClosermuseums(){
+function addClosermuseums() {
   var distancias = [museos.length];
   var distanciasAux = [museos.length];
   //se calculan todas las distancias entre museos y ubicacion actual
   for (var i = 0; i < museos.length; i++) {
     var km = getDistanceFromLatLonInKm(userLat, userLng, museos[i]["latitude"], museos[i]["longitude"])
+    //console.log(museos[i]["name"] + ": a " + km + " de distancia")
     distancias[i] = km;
     distanciasAux[i] = km;
   }
 
   //ordenamos distancias
   distancias.sort((a, b) => a - b);
-  for (var i = 0; i < distancias.length; i++) {
-    console.log(distancias[i]);
-  }
-
-  for (var i = 0; i < distanciasAux.length; i++) {
-    console.log(distanciasAux[i]);
-  }
-
-  for (var x = 0; x < 4; x++) {
-    for (var i = 0; i < distancias.length; i++) {
-      if (distancias[x] == distanciasAux[i]) {
-        document.getElementById("titulo_galeria_index" + x.toString()).innerHTML = museos[i]["name"];
-        document.getElementById("foto_galeria_index" + x.toString()).src = museos[i]["image"];
-        document.getElementById("titulo_galeria_index" + x.toString()).href = "museo.html?" + i.toString();
+  
+  for (var i = 0; i < 4; i++) {
+    for (var j = 0; j < distancias.length; j++) {
+      if (distancias[i] == distanciasAux[j]) {
+        document.getElementById("titulo_galeria_index" + i.toString()).innerHTML = museos[j]["name"];
+        document.getElementById("foto_galeria_index" + i.toString()).src = museos[j]["image"];
+        document.getElementById("titulo_galeria_index" + i.toString()).href = "museo.html?" + j.toString();
       }
     }
   }
 }
 
 //API google maps para mostrar la posición de los museos
-function addMap(){
+function addMap() {
   var coord = [];
   for (var i = 0; i < museos.length; i++) {
     //Obtenemos todas las coordenadas
     coord[i] = { lat: Number(museos[i]["latitude"]), lng: Number(museos[i]["longitude"]) };
-    //console.log("Museo " + museos[i]["name"] + " -> lat: " + coord[i].lat + ", long: " + coord[i].lng);
   }
-  
+
   //Creamos el mapa
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
-    center: {lat: Number(userLat), lng: Number(userLng)}
+    center: { lat: Number(userLat), lng: Number(userLng) }
   });
-  
+
   //Añadimos los marcadores de los museos
   var marker = [];
   for (var i = 0; i < museos.length; i++) {
@@ -105,7 +97,7 @@ function addMap(){
     anchor: new google.maps.Point(15, 30),
   };
   var userMarker = new google.maps.Marker({
-    position: {lat: Number(userLat), lng: Number(userLng)},
+    position: { lat: Number(userLat), lng: Number(userLng) },
     map: map,
     title: "you",
     icon: svgMarker
@@ -115,17 +107,16 @@ function addMap(){
 //funcion para calcular distancias entre ubicacion actual y museos
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
   var R = 6371; // Radius of the earth in km
-  var dLat = deg2rad(lat2 - lat1);  // deg2rad below
-  var dLon = deg2rad(lon2 - lon1);
+  var dLat = deg2rad(Math.abs(lat2 - lat1));  
+  var dLon = deg2rad(Math.abs(lon2 - lon1));
   var a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
     Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
     Math.sin(dLon / 2) * Math.sin(dLon / 2);
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  var d = R * c; // Distance in km
-  return d;
+  return R * c; // Distance in km
 }
 
 function deg2rad(deg) {
-  return deg * (Math.PI / 180)
+  return deg * (Math.PI / 180);
 }
