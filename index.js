@@ -1,4 +1,4 @@
-//para escoger el museo en cuestion
+//para escoger el museo en cuestión
 var id = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.document.URL.length);
 id = id.replace("?", "");
 id = id.replace("#", "");
