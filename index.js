@@ -1,4 +1,4 @@
-//para escoger el museo en cuestión
+//para escoger el museo en cuestión  asddds
 var id = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.document.URL.length);
 id = id.replace("?", "");
 id = id.replace("#", "");
