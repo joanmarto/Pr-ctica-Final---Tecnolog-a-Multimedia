@@ -17,24 +17,31 @@
 	
 	}
 body {
-	font-family:"Open Sans", Helvetica, Arial, sans-serif;
-	font-weight:300;
+	font-family: Helvetica, sans-serif;
+	
 	
 	line-height:30px;
 	color:black;
 	background:#0CF;
 
-    font-family: sans-serif;
-   /*background: linear-gradient(rgba(129, 128, 128, 0.7), rgba(129, 128, 128, 0.7)), url("images/catedral.jpg");*/
+   
+
    background-image: url("images/catedral.jpg");
 	  
 		
 	  
 	 
 }
-
+.titulo_centrado{
+	text-align: center;
+  }
+  .titulo {
+	font-family: Helvetica, sans-serif;
+	font-weight: bolder;
+	text-transform: uppercase;
+  }
 .contenedor {
-	max-width:400px;
+	max-width:700px;
 	width:100%;
 	margin:0 auto;
 	position:relative;
@@ -126,3 +133,41 @@ fieldset {
 :-ms-input-placeholder {
  color:#888;
 }
+
+.espacio {
+
+	width: auto;
+	height: 100px;
+  }
+/*bloque oscuro*/
+.bloque_principal {
+	margin-left: 400px;
+	margin-right: 400px;
+	padding-left: 40px;
+	padding-right: 40px;
+	width: auto;
+	height: auto;
+	background-color: rgba(0, 0, 0, 0.767);
+	color: azure;
+	min-width: 400px;
+	padding-top: 50px;
+  }
+  /* Web responsive*/
+
+
+@media (max-width:1400px) {
+	.bloque_principal {
+	  margin-left:150px;
+	  margin-right: 150px;
+  
+	}
+	
+  }
+  @media (max-width:1000px) {
+	.bloque_principal {
+	  margin-left: 0px;
+	  margin-right: 0px;
+  
+	}
+
+  }

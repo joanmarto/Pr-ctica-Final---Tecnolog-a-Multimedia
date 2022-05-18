@@ -4,6 +4,14 @@
     padding-left: 15px;
     padding-right: 15px;
   }
+  .espacio {
+
+    width: auto;
+    height: 100px;
+  }
+  .titulo_centrado{
+    text-align: center;
+    }
   body{
     background-image: url("images/catedral.jpg");
     background-attachment: fixed;
@@ -131,3 +139,24 @@
     min-width: 400px;
     padding-top: 50px;
   }
+
+  /* Web responsive*/
+
+
+@media (max-width:1400px) {
+  .bloque_principal {
+    margin-left:150px;
+    margin-right: 150px;
+
+  }
+  
+}
+@media (max-width:1000px) {
+  .bloque_principal {
+    margin-left: 0px;
+    margin-right: 0px;
+
+  }
+ 
+  
+}
