@@ -6,6 +6,7 @@
   }
   body{
     background-image: url("images/catedral.jpg");
+    background-attachment: fixed;
   }
   .image-block {
     margin-top: 24px;
@@ -114,4 +115,19 @@
       margin-left: 0;
       margin-right: 0;
     }
+  }
+
+  /*API TWITTER*/
+
+  .bloque_principal {
+    margin-left: 400px;
+    margin-right: 400px;
+    padding-left: 70px;
+    padding-right: 70px;
+    width: auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.767);
+    color: azure;
+    min-width: 400px;
+    padding-top: 50px;
   }
