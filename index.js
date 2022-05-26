@@ -51,7 +51,7 @@ function addClosermuseums() {
 
   //ordenamos distancias
   distancias.sort((a, b) => a - b);
-  
+
   for (var i = 0; i < 4; i++) {
     for (var j = 0; j < distancias.length; j++) {
       if (distancias[i] == distanciasAux[j]) {
@@ -85,6 +85,23 @@ function addMap() {
       map: map,
       title: museos[i]["name"]
     });
+    let selected = museos[i]["name"];
+    //Al clicar en el marcador de un museo se muestra su página web
+    marker[i].addListener("click", () => {
+      var pos;
+      for (pos = 0; pos < museos.length; pos++) {
+        if (equals(museos[pos]["name"], selected)) {
+          break;
+        }
+      }
+      if (pos == museos.length) { //Error
+        alert("Escribe el nombre de un museo válido")
+      } else {
+        //Cargamos la página del museo seleccionado
+        let url = `/museo.html?${pos}`;
+        window.location.assign(url);
+      }
+    });
   }
   //Añadimos el marcador del usuario. Para diferenciarlo del resto será un icono svg de color azul
   const svgMarker = {
@@ -107,7 +124,7 @@ function addMap() {
 //funcion para calcular distancias entre ubicacion actual y museos
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
   var R = 6371; // Radius of the earth in km
-  var dLat = deg2rad(Math.abs(lat2 - lat1));  
+  var dLat = deg2rad(Math.abs(lat2 - lat1));
   var dLon = deg2rad(Math.abs(lon2 - lon1));
   var a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
