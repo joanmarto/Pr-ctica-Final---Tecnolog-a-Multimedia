@@ -8,11 +8,6 @@ xhttp_search.onreadystatechange = function () {
 
     if (this.readyState == 4 && this.status == 200) {
         museos = JSON.parse(this.responseText);
-
-        for (var i = 0; i < museos.length; i++) {
-            nom_museos[i] = museos[i]["name"];
-            console.log(nom_museos[i]);
-        }
         autocomplete(document.getElementById("buscador"), nom_museos);
     }
 }
