@@ -1,7 +1,7 @@
 const nom_museos = [];
 var selected;
 const xhttp_search = new XMLHttpRequest();
-xhttp_search.open('GET', 'museos.json', true)
+xhttp_search.open('GET', '/json/museos.json', true)
 xhttp_search.send();
 xhttp_search.onreadystatechange = function () {
 
@@ -32,7 +32,7 @@ function autocomplete(inp, arr) {
             if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
                 b = document.createElement("DIV");
                 b.innerHTML = "<p style = \"font-size:100%\">" + arr[i] + "</p>";
-                b.innerHTML += arr[i].substr(val.length);
+                //b.innerHTML += arr[i].substr(val.length);
                 b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
                 b.addEventListener("click", function (e) {
                     inp.value = this.getElementsByTagName("input")[0].value;
@@ -104,11 +104,7 @@ function autocomplete(inp, arr) {
             alert("Escribe el nombre de un museo válido")
         } else {
             //Cargamos la página del museo seleccionado
-            let url = `/museo.html?${pos}`;
-            //alert("URL: " + url);
-            //alert("location.href: " + window.location.href);
-            //location.assign(url);
-            //window.location.href = url;
+            let url = `/html/museo.html?${pos}`;
             window.location.assign(url);
         }
         return false;

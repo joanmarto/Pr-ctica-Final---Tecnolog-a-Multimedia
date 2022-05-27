@@ -1,0 +1,178 @@
+/*titulo*/
+
+.titulo {
+  font-family: Arial;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 250%;
+}
+
+h3 {
+  font-size: 120%;
+}
+
+h2 {
+  font-size: 120%;
+  text-transform: none;
+  text-align: justify;
+}
+
+h1 {
+  text-align: "center";
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 150%;
+}
+
+.titulo_centrado {
+  text-align: center;
+}
+
+.navbar {
+  background-color: rgba(27, 32, 36);
+}
+
+body {
+  font-family: sans-serif;
+  background-image: url("/images/catedral.jpg");
+  background-attachment: fixed;
+}
+
+img {
+  width: 80%;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+h5 {
+  color: white;
+  font-size: 250%;
+}
+
+h4 {
+  color: white;
+  font-size: 150%;
+}
+
+p {
+  color: white;
+  font-size: 150%;
+}
+
+.espacio {
+  width: auto;
+  height: 100px;
+}
+
+.espacio_1 {
+  width: auto;
+  height: 10px;
+}
+
+/*Mapa Google maps*/
+.map {
+  align-self: center;
+  margin: 10px;
+  padding: 15px;
+}
+
+#map {
+  height: 500px;
+  max-width: 500px;
+  margin: auto;
+  display: block;
+}
+
+/*api tiempo*/
+#contenedor {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: auto;
+}
+
+#caja1 {
+  display: flex;
+  align-items: right;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  color: azure;
+  text-align: center;
+  margin: auto;
+  display: block;
+}
+
+.bloque_principal {
+  margin-left: 250px;
+  margin-right: 250px;
+  padding-left: 70px;
+  padding-right: 70px;
+  width: auto;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.767);
+  color: azure;
+  min-width: 400px;
+  padding-top: 50px;
+}
+
+.bloque_principal_2 {
+  margin-left: 400px;
+  margin-right: 400px;
+  padding-left: 70px;
+  padding-right: 70px;
+  width: auto;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.767);
+  color: azure;
+  min-width: 400px;
+  padding-top: 50px;
+}
+
+#icono-animado {
+  width: 200px;
+  height: 200px;
+}
+
+/*video youtube*/
+.videoyt {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: block;
+
+  /*web responsive*/
+  position: absolute;
+}
+
+.responsive {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+/* Web responsive*/
+@media (max-width:1400px) {
+  .bloque_principal {
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+
+  .bloque_principal_2 {
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+}
+
+@media (max-width:1000px) {
+  .bloque_principal {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .bloque_principal_2 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
