@@ -50,5 +50,57 @@
                 "longitude": "3.016006914781783",
                 "url": "https://www.youtube.com/embed/UyrFVhInnVM",
                 "email": "museu@ajpollenca.net"
+        },
+        {
+                "name": "Can Prunera",
+                "image": "https://museosdemallorca.netlify.app/images/can_prunera.jpg",
+                "description": "Can Prunera Museu Modernista está ubicado en una antigua casa de estilo modernista construido a comienzos del siglo XX. Formas sinuosas, animalísticas y naturales se combinan para dar la bienvenida al visitante, que recorrerá un museo que se ha convertido en una de las señas de identidad del pueblo de Sóller.\nLa gran mayoría de obras expuestas en Can Prunera Museu Modernista pertenecen a la Col·lecció d’Art Serra, las cuales han sido cedidas a partir de un convenio con la Fundació Art Serra,entidad que preside el empresario y coleccionista Pere A. Serra Bauzà.",
+                "sameAs": "https://canprunera.com/",
+                "telephone": "971 638 973",
+                "openingHoursSpecification": "Del 1 de noviembre al 28 de febrero de 10.30 h a 18.00 h\nLunes cerrado.",
+                "address": "Carrer Sa Lluna, 86 - 90 Sóller - Mallorca",
+                "latitude": "39.76789185927415",
+                "longitude": "2.7180540979253847",
+                "url": "https://youtu.be/RcShwcoPyxI",
+                "email": "canprunera@gmaiñ.com"
+        },
+        {
+                "name": "Museo Arte Sacro",
+                "image": "https://museosdemallorca.netlify.app/images/museo_arte_sacro.jpg",
+                "description": "El Museo diocesano de Mallorca (en catalán Museu Diocesà de Mallorca) es un edificio de estilo gótico situado en la ciudad española de Palma de Mallorca, capital de la isla homónima (Islas Baleares, España).\nFue inaugurado en 1916 y su contenido ofrece un recorrido histórico sobre el cristianismo de la isla. Además de funcionar como museo donde se exhiben piezas del patrimonio artístico de la iglesia católica mallorquina, consiste en la residencia del obispo de Mallorca.​ Está dividido en siete secciones, donde se recogen obras de distinta temática como la arqueología, la cerámica moderna, la escultura religiosa, el legado Séguier, obras de arte religioso variado y numismática, obras de pintura gótica y una colección bibliográfica. Entre las obras de su colección destaca la imagen de San Jorge que realizó el pintor de estilo flamenco Pedro Nisart y la obra de Juan de Joanes, pintor valenciano del renacimiento con ejemplos de corte romano y clásicos monumentales.",
+                "sameAs": "https://www.museuartsacredemallorca.org/",
+                "telephone": "971 713 133",
+                "openingHoursSpecification": "HORARIO DE INVIERNO (Desde el 21 de septiembre de 2021 al 31 de junio de 2022)\nLunes: de 10:00 h. - 14:00h. Área de Restauración y Conservación.\nDe Martes a Sábado: Visitas turísticas, culturales y educativas.\nMañanas: de 10:00h. - 14:00h.\nTardes: de 16:00 h. - 19 :00h.\nDomingo y festivos de apertura: de 10 a 14 horas.\nHORARIO DE VERANO (Desde el 1 de julio de 2021 al 15 de septiembre de 2022).\nLunes: de 10:00 h. - 14:00h. Área de restauración y Archivo Histórico.\nDe Martes a Sábado: Visitas turísticas, culturales y educativas.\nMañanas: de 10:00h. - 14:00h.\nTardes: de 17:00 h. - 20 :00h.\nDomingo y festivos de apertura: de 10 a 14 horas.",
+                "address": "Carrer del Mirador, 5\n(Palau Episcopal)\n07001 Palma\nIlles Balears",
+                "latitude": "39.56726950803524",
+                "longitude": "2.6490996153441",
+                "url": "https://youtu.be/1ple6-R-Dzk",
+                "email": "masm@catedraldemallorca.org"  
+        },
+        {
+                "name": "Juan March",
+                "image": "https://museosdemallorca.netlify.app/images/museo_juan_march.jpg",
+                "description": "El Museu Fundación Juan March se sitúa en un edificio del siglo XVII. Concebido originalmente como vivienda, el museo fue reformado por el arquitecto Guillem Reynés i Font y escogido para acoger parte de la colección de la Fundación Juan March desde 1990. Ampliado y reformado en diversas ocasiones, desde octubre de 2009 se denomina Museu Fundación Juan March.\nEs un centro cultural que exhibe su colección de arte español contemporáneo y la reordena periódicamente para acoger exposiciones temporales. También organiza actividades culturales.",
+                "sameAs": "https://www.march.es/es/palma",
+                "telephone": "971 71 35 15",
+                "openingHoursSpecification": "Lunes a viernes: 10 - 18:30 H\nSábado: 10:30 - 14 H\nDomingos y festivos: cerrado\nJueves y Viernes Santo: cerrado\n24 y 31 de diciembre: 10 - 14 H",
+                "address": "Carrer de Sant Miquel, 11, 07002 Palma",
+                "latitude": "39.5726961998643",
+                "longitude": "2.652085830688201",
+                "url": "https://youtu.be/ympqCJp0ElY?t=23",
+                "email": "museupalma@march.es"
+        },
+        {
+                "name": "Son Marroig",
+                "image": "https://museosdemallorca.netlify.app/images/Son_Marroig.jpg",
+                "description": "Son Marroig es una posesión del término municipal de Deyá, en Mallorca (Islas Baleares, España). En sus dominios está la imponente península de Sa Foradada.\nAntes del siglo XVII fue conocida como la Foradada de los Masroig, y a partir de entonces hasta finales del siglo XVIII como Son Masroig de la Foradada.\nEl año 1624 era propiedad de Gabriel Masroig de la Foradada y en 1685 se valoró en 11.000 libras. En 1863 pasó a la familia Cortei, que la vendieron finalmente al archiduque Luis Salvador, que la consideraba una de las casas mejor situadas de la isla e imprescindible para su proyecto de reconstruir el Miramar lluliano. No fue una operación fácil y cuando finalmente la adquirió fue por un precio muy superior a la que correspondía pero, según dice las costumbres populares de Deyá, el archiduque afirmaba que con todo el dinero que había dado no había pagado ni el agujero de la Foradada. Empleó el pequeño puerto natural para tener su barco, el Nixe, y llenó sus olivares de miradores.\nA la muerte del archiduque, esta posesión, como todas las de Mallorca, pasaron a manos de su secretario, el deyarés Antoni Vives Colom. Hoy en día sigue siendo de sus descendientes, que tienen un museo dedicado a la figura del archiduque.\nDesde 1978 se realiza el Festival Internacional de Música Clásica de Deyá.",
+                "sameAs": "https://sonmarroig.com/",
+                "telephone": "971 63 91 58",
+                "openingHoursSpecification": "De lunes a sábado:\n09.30am a 14.00pm y 15.30pm a 16.30pm\nDomingo cerrado.",
+                "address": "Via Deià, Carretera de Valldemossa, s/n, 07179 Deià, Islas Baleares",
+                "latitude": "39.75172593255301",
+                "longitude": "2.6292674920646006",
+                "url": "https://youtu.be/f6a4XKm8kD4",
+                "email": "info@sonmarroig.com"  
         }
 ]
