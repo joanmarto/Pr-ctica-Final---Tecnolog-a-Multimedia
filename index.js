@@ -3,7 +3,12 @@ var id = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.
 id = id.replace("?", "");
 id = id.replace("#", "");
 
+//Variables
 var museos;
+var locationError = false;
+
+//Número máximo de museos en el grid container
+const MAX_MUSEUMS_GRID_CONTAINER = 4;
 
 var userLat, userLng; //Coordenadas cliente
 var options = {
@@ -22,9 +27,53 @@ xhttp.onreadystatechange = function () {
     museos = JSON.parse(this.responseText);
     navigator.geolocation.getCurrentPosition(success, error, options);
     //Esperamos a que se obtenga la ubicación
-    setTimeout(addClosermuseums, 1000);
-    setTimeout(addMap, 1000);
+    setTimeout(addContentPage, 500);
   }
+}
+
+function addContentPage() {
+
+  if (!locationError) {//Comprobamos si ha habido error
+    addClosermuseums();
+    addMap();
+  } else {
+    //Añadimos museos aleatorios
+    let randoms = getRandomNumbersList();
+    for (let i = 0; i < MAX_MUSEUMS_GRID_CONTAINER; i++) {
+      
+      document.getElementById("titulo_galeria_index" + i.toString()).innerHTML = museos[randoms[i]]["name"];
+      document.getElementById("foto_galeria_index" + i.toString()).src = museos[randoms[i]]["image"];
+      document.getElementById("titulo_galeria_index" + i.toString()).href = "museo.html?" + randoms[i].toString();
+    }
+  }
+}
+
+//Función para generar una lista de números aleatorios sin repetir ninguno
+function getRandomNumbersList(){
+  let randArray = [];
+  for(let i = 0; i < MAX_MUSEUMS_GRID_CONTAINER; i++){
+    let rand = getRandom(museos.length);
+    while(contains(randArray, rand)){
+      rand = getRandom(museos.length);
+    }
+    randArray[i] = rand;
+  }
+  return randArray;
+}
+
+//Función que comprueba si un elemento está en una lista
+function contains(arr, number){
+  for(let i = 0; i < arr.length; i++){
+    if(number == arr[i]){
+      return true;
+    }
+  }
+  return false;
+}
+
+//Función que retorna un random entre 0 y max - 1
+function getRandom(max){
+  return Math.floor(Math.random() * max);
 }
 
 function success(pos) {
@@ -35,6 +84,7 @@ function success(pos) {
 
 function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
+  locationError = true;
 };
 
 //Función para mostrar los museos más cercanos
@@ -52,7 +102,7 @@ function addClosermuseums() {
   //ordenamos distancias
   distancias.sort((a, b) => a - b);
 
-  for (var i = 0; i < 4; i++) {
+  for (var i = 0; i < MAX_MUSEUMS_GRID_CONTAINER; i++) {
     for (var j = 0; j < distancias.length; j++) {
       if (distancias[i] == distanciasAux[j]) {
         document.getElementById("titulo_galeria_index" + i.toString()).innerHTML = museos[j]["name"];

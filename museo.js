@@ -37,6 +37,7 @@ function addMap() {
 }
 
 function printWebPage() {
+  document.getElementById("title").innerHTML = museos[id]["name"];
   //console.log(museos[id]["name"]);
   document.getElementById("titulo_museo").innerHTML = museos[id]["name"];
   document.getElementById("descripcion_museo").innerHTML = museos[id]["description"];
@@ -72,7 +73,7 @@ window.addEventListener('load', () => {
       //console.log(data)
 
       let temp = Math.round((data.main.temp - 273))
-      console.log(temp)
+      //console.log(temp)
       temperaturaValor.textContent = `${temp} °C`
 
       //console.log(data.weather[0].description)
