@@ -13,18 +13,18 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 
-   <!--CSS-->
-   <link type="text/css" rel="stylesheet" href="/css/museo.css">
-   
-   
+  <!--CSS-->
+  <link type="text/css" rel="stylesheet" href="/css/museo.css">
+
+
 
   <!--JavaScript-->
   <script defer src="/js/buscador.js"></script>
-  <script src="/js/colaboraciones.js"></script>
-  
+  <script defer src="/js/colaboraciones.js"></script>
 
-  <!--Titulo-->
-  <title>Museos de Mallorca</title>
+
+  <!--Título dinámico-->
+  <title id="title"></title>
 </head>
 
 <body>
@@ -72,137 +72,155 @@
       </div>
     </nav>
   </header>
- <!--inicio bloque1-->
- <div class="bloque_principal">
+  <!--inicio bloque1-->
+  <div class="bloque_principal">
 
-  <!-- Page Content -->
-  <div class="container titulo_contenedor titulo_centrado">
-    <h1 class="mt-4 titulo" id="titulo_museo">titulo</h1>
-  </div>
-
-  <!--imagen y texto museo-->
-  <div class="espacio"></div>
-
-  <div class="bloque1">
-    <h2 id="descripcion_museo">descripcion</h2>
-  </div>
-
-  <div class="espacio"></div>
-
-  <div class="bloque2 ">
-    <img id="imagen_museo" src="/images/Castillo_de_Bellver.jpg"> </a>
-  </div>
-  <div class="espacio"></div>
-
-  <!--video youtube-->
-  <div class="responsive">
-    <iframe class="videoyt" id="video" title="YouTube video player" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen></iframe>
-  </div>
-
-  <div class="espacio"></div>
-
-  <!--final bloque1-->
-</div>
-<div class="espacio"></div>
-
-<!--inicio bloque2-->
-<div class="bloque_principal">
-
-  <!--informacion del museo-->
-  <div class="titulo_centrado">
-    <h1 class="titulo">Información del museo</h1>
-  </div>
-  <div id="contenedor">
-    <div id="caja1">
-
-      <h1>Fecha de apertura</h1>
-      <h3 id="apertura"></h3>
-      <div class="espacio_1"></div>
-
-      <h1>Correo electrónico</h1>
-      <h3 id="email"></h3>
-      <div class="espacio_1"></div>
-
-      <h1>Página web</h1>
-      <h3 id="web" onclick="goToPage()"></h3>
-      <div class="espacio_1"></div>
-
-      <h1>Teléfono</h1>
-      <h3 id="telefono"></h3>
-      <div class="espacio_1"></div>
-
-      <h1>Dirección</h1>
-      <h3 id="direccion"></h3>
-
+    <!-- Page Content -->
+    <div class="container titulo_contenedor titulo_centrado">
+      <h1 class="mt-4 titulo" id="titulo_museo">titulo</h1>
     </div>
-  </div>
 
-  <!--map-->
-  <div class="map">
-    <div id="map"></div>
-  </div>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik"></script>
+    <!--imagen y texto museo-->
+    <div class="espacio"></div>
 
-  <div class="espacio"></div>
-  <!--final bloque2-->
-</div>
-
-<div class="espacio"></div>
-
-<!--inicio bloque3-->
-<div class="bloque_principal_2">
-
-  <!--api tiempo-->
-  <div class="titulo_centrado">
-    <h1 class="titulo">Tiempo</h1>
-  </div>
-
-  <div id="contenedor">
-    <div id="caja1">
-
-      <h3>Tipo de día</h3>
-      <h1 id="temperatura-descripcion"></h1>
-      <img id="icono-animado">
-      <div class="espacio_1"></div>
-
-      <h3>Temperatura</h3>
-      <h1 id="temperatura-valor"></h1>
-      <div class="espacio_1"></div>
-
-      <h3>Ciudad</h3>
-      <h1 id="ubicacion"></h1>
-      <div class="espacio_1"></div>
-
-      <h3>Velocidad del Viento</h3>
-      <h1 id="viento-velocidad"></h1>
+    <div class="bloque1">
+      <h2 id="descripcion_museo">descripcion</h2>
     </div>
-  </div>
 
-  <!--final bloque3-->
-</div>
+    <div class="espacio"></div>
 
-<div class="espacio"></div>
+    <div class="bloque2 ">
+      <div class="row">
+        <div class="column">
+          <img id="img_0">
+          <img id="img_1">
+          <img id="img_2">
+          <img id="img_3">
+        </div>
+        <div class="column">
+          <img id="img_4">
+          <img id="img_5">
+          <img id="img_6">
+          <img id="img_7">
 
-<!--redes sociales-->
-<div class="socialmedia">
-</div>
+        </div>
+        <div class="column">
+          <img id="img_8">
+          <img id="img_9">
+          <img id="img_10">
+          <img id="img_11">
 
-<!--footer-->
-<body class="d-flex flex-column">
-  <div id="page-content">
-    <div class="container text-center">
-      <div class="row justify-content-center">
+        </div>
+        <div class="column">
+          <img id="img_12">
+          <img id="img_13">
+          <img id="img_14">
+          <img id="img_15">
+
+        </div>
       </div>
     </div>
+    <div class="espacio"></div>
+
+   
+
+    <!--final bloque1-->
   </div>
-  <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
-    <div class="container text-center">
-      <small>© 2022 Copyright:www.museosdemallorca.netlify.app</small>
+  <div class="espacio"></div>
+
+  <!--inicio bloque2-->
+  <div class="bloque_principal">
+
+    <!--informacion del museo-->
+    <div class="titulo_centrado">
+      <h1 class="titulo">Información del museo</h1>
     </div>
-  </footer>
-</body>
+    <div id="contenedor">
+      <div id="caja1">
+
+        <h1>Fecha de apertura</h1>
+        <h3 id="apertura"></h3>
+        <div class="espacio_1"></div>
+
+        <h1>Página web</h1>
+        <h3 id="web" onclick="goToPage()"></h3>
+        <div class="espacio_1"></div>
+
+        <h1>Teléfono</h1>
+        <h3 id="telefono"></h3>
+        <div class="espacio_1"></div>
+
+        <h1>Dirección</h1>
+        <h3 id="direccion"></h3>
+
+      </div>
+    </div>
+
+    <!--map-->
+    <div class="map">
+      <div id="map"></div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik"></script>
+
+    <div class="espacio"></div>
+    <!--final bloque2-->
+  </div>
+
+  <div class="espacio"></div>
+
+  <!--inicio bloque3-->
+  <div class="bloque_principal_2">
+
+    <!--api tiempo-->
+    <div class="titulo_centrado">
+      <h1 class="titulo">Tiempo</h1>
+    </div>
+
+    <div id="contenedor">
+      <div id="caja1">
+
+        <h3>Tipo de día</h3>
+        <h1 id="temperatura-descripcion"></h1>
+        <img id="icono-animado">
+        <div class="espacio_1"></div>
+
+        <h3>Temperatura</h3>
+        <h1 id="temperatura-valor"></h1>
+        <div class="espacio_1"></div>
+
+        <h3>Ciudad</h3>
+        <h1 id="ubicacion"></h1>
+        <div class="espacio_1"></div>
+
+        <h3>Velocidad del Viento</h3>
+        <h1 id="viento-velocidad"></h1>
+      </div>
+    </div>
+
+    <!--final bloque3-->
+  </div>
+
+  <div class="espacio"></div>
+
+  <!--redes sociales-->
+  <div class="socialmedia">
+  </div>
+
+  <!--footer-->
+
+  <body class="d-flex flex-column">
+    <div id="page-content">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+        </div>
+      </div>
+    </div>
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+      <div class="container text-center">
+        <small>© 2022 Copyright:www.museosdemallorca.netlify.app</small>
+      </div>
+    </footer>
+  </body>
 
 
   </div>
