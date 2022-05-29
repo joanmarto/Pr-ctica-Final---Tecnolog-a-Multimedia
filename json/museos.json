@@ -61,7 +61,7 @@
                 "address": "Carrer Sa Lluna, 86 - 90 Sóller - Mallorca",
                 "latitude": "39.76789185927415",
                 "longitude": "2.7180540979253847",
-                "url": "https://youtu.be/RcShwcoPyxI",
+                "url": "https://www.youtube.com/embed/RcShwcoPyxI",
                 "email": "canprunera@gmaiñ.com"
         },
         {
@@ -74,7 +74,7 @@
                 "address": "Carrer del Mirador, 5\n(Palau Episcopal)\n07001 Palma\nIlles Balears",
                 "latitude": "39.56726950803524",
                 "longitude": "2.6490996153441",
-                "url": "https://youtu.be/1ple6-R-Dzk",
+                "url": "https://www.youtube.com/embed/1ple6-R-Dzk",
                 "email": "masm@catedraldemallorca.org"  
         },
         {
@@ -87,7 +87,7 @@
                 "address": "Carrer de Sant Miquel, 11, 07002 Palma",
                 "latitude": "39.5726961998643",
                 "longitude": "2.652085830688201",
-                "url": "https://youtu.be/ympqCJp0ElY?t=23",
+                "url": "https://www.youtube.com/embed/ympqCJp0ElY",
                 "email": "museupalma@march.es"
         },
         {
@@ -100,7 +100,7 @@
                 "address": "Via Deià, Carretera de Valldemossa, s/n, 07179 Deià, Islas Baleares",
                 "latitude": "39.75172593255301",
                 "longitude": "2.6292674920646006",
-                "url": "https://youtu.be/f6a4XKm8kD4",
+                "url": "https://www.youtube.com/embed/f6a4XKm8kD4",
                 "email": "info@sonmarroig.com"  
         }
 ]
