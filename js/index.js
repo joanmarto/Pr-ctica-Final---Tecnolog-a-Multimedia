@@ -9,6 +9,7 @@ var locationError = false;
 
 //Número máximo de museos en el grid container
 const MAX_MUSEUMS_GRID_CONTAINER = 4;
+const MAX_MUSEUMS_SLIDER = 3;
 
 var userLat, userLng; //Coordenadas cliente
 var options = {
@@ -40,18 +41,37 @@ function addContentPage() {
     //Añadimos museos aleatorios
     let randoms = getRandomNumbersList();
     for (let i = 0; i < MAX_MUSEUMS_GRID_CONTAINER; i++) {
-      
       document.getElementById("titulo_galeria_index" + i.toString()).innerHTML = museos[randoms[i]]["name"];
       document.getElementById("foto_galeria_index" + i.toString()).src = museos[randoms[i]]["image"];
       document.getElementById("titulo_galeria_index" + i.toString()).href = "museo.html?" + randoms[i].toString();
     }
+    //Creamos un array con los museos para el slider
+    let otherMuseums = [];
+    for(let i = MAX_MUSEUMS_GRID_CONTAINER; i < MAX_MUSEUMS_GRID_CONTAINER + MAX_MUSEUMS_SLIDER; i++){
+      otherMuseums[i - MAX_MUSEUMS_GRID_CONTAINER] = museos[randoms[i]];  
+    }
+    addOtherMuseums(otherMuseums);
+  }
+}
+
+//Función para añadir museos al carrusel
+function addOtherMuseums(arr){
+  console.log(arr[0]["name"]);
+  for(let i = 0; i < MAX_MUSEUMS_SLIDER; i++){
+    //Añadimos una parte de la descripción (275 caracteres)
+    let description = arr[i]["description"].substring(0, 275);
+    description += "...";
+    //Insertamos los elementos
+    document.getElementById("slide_title_" + i.toString()).innerHTML = arr[i]["name"];
+    document.getElementById("slide_img_" + i.toString()).src = arr[i]["image"];
+    document.getElementById("slide_desc_" + i.toString()).innerHTML =  description;
   }
 }
 
 //Función para generar una lista de números aleatorios sin repetir ninguno
 function getRandomNumbersList(){
   let randArray = [];
-  for(let i = 0; i < MAX_MUSEUMS_GRID_CONTAINER; i++){
+  for(let i = 0; i < museos.length; i++){
     let rand = getRandom(museos.length);
     while(contains(randArray, rand)){
       rand = getRandom(museos.length);
@@ -111,10 +131,22 @@ function addClosermuseums() {
       }
     }
   }
+  //Creamos el array de museos para el slide de fotos
+  let otherMuseums = [];
+  for(let i = MAX_MUSEUMS_GRID_CONTAINER; i < MAX_MUSEUMS_GRID_CONTAINER + MAX_MUSEUMS_SLIDER; i++){
+    for(let j = 0; j < distancias.length; j++){
+      if (distancias[i] == distanciasAux[j]) {
+        otherMuseums[i - MAX_MUSEUMS_GRID_CONTAINER] = museos[j];
+      }
+    }
+  }
+  //Añadimos los museos al slide de fotos
+  addOtherMuseums(otherMuseums);
 }
 
 //API google maps para mostrar la posición de los museos
 function addMap() {
+  document.getElementById("map_title").innerHTML = "Localiza nuestros museos";
   var coord = [];
   for (var i = 0; i < museos.length; i++) {
     //Obtenemos todas las coordenadas
