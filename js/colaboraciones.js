@@ -86,9 +86,9 @@ function printWebPage() {
     }
     for (let i = 1; i <= MAX_EV_BRITISH; i++) {
 
-        document.getElementById("img_ev_" + i.toString()).src = british["events"][i]["image"];
+    /*    document.getElementById("img_ev_" + i.toString()).src = british["events"][i]["image"];
         console.log(british["events"][randomev[i]]["image"])
-       document.getElementById("tit_ev_" + i.toString()).innerHTML = british["events"][i]["name"];
+       document.getElementById("tit_ev_" + i.toString()).innerHTML = british["events"][i]["name"];*/
        /*document.getElementById("disc_ev_" + i.toString()).innerHTML = british["events"][randomev[i]]["description"];*/
        
 
