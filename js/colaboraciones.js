@@ -57,13 +57,13 @@ function getRandom(max) {
     return Math.floor(Math.random() * max);
 }
 //Función para generar una lista de números aleatorios sin repetir ninguno
-function getRandomNumbersList(max) {
+function getRandomNumbersList(max,long) {
     let randArray = [];
     for (let i = 0; i < max; i++) {
-        let rand = getRandom(british["events"].length);
+        let rand = getRandom(long);
        
         while (contains(randArray, rand)) {
-            rand = getRandom(british["datosExtra"][0]["gallery"].length);
+            rand = getRandom(long);
         }
         randArray[i] = rand;
     }
@@ -76,19 +76,20 @@ function printWebPage() {
     document.getElementById("descripcion_museo").innerHTML = british["british"]["description"];
 
     //Añadimos fotos aleatorias del british
-    let randoms = getRandomNumbersList(MAX_FOTOS_BRITISH);
-    let randomev = getRandomNumbersList(MAX_EV_BRITISH);
+    let randoms = getRandomNumbersList(MAX_FOTOS_BRITISH,british["datosExtra"][0]["gallery"].length);
+    let randomev = getRandomNumbersList(MAX_EV_BRITISH,british["events"].length);
     for (let i = 0; i < MAX_FOTOS_BRITISH; i++) {
 
         document.getElementById("img_" + i.toString()).src = british["datosExtra"][0]["gallery"][randoms[i]];
        
 
     }
-    for (let i = 0; i < MAX_EV_BRITISH; i++) {
+    for (let i = 1; i <= MAX_EV_BRITISH; i++) {
 
-        document.getElementById("img_ev_" + i.toString()).src = british["events"][randomev[i]]["image"];
-       document.getElementById("tit_ev_" + i.toString()).innerHTML = british["events"][randomev[i]]["name"];
-       document.getElementById("disc_ev_" + i.toString()).innerHTML = british["events"][randomev[i]]["description"];
+        document.getElementById("img_ev_" + i.toString()).src = british["events"][i]["image"];
+        console.log(british["events"][randomev[i]]["image"])
+       document.getElementById("tit_ev_" + i.toString()).innerHTML = british["events"][i]["name"];
+       /*document.getElementById("disc_ev_" + i.toString()).innerHTML = british["events"][randomev[i]]["description"];*/
        
 
     }
