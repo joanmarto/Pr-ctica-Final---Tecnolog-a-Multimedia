@@ -2,6 +2,7 @@
 var british;
 //Número máximo de museos en el grid container
 const MAX_FOTOS_BRITISH = 16;
+const MAX_EV_BRITISH=4;
 
 //Petición para obtener el JSON del British Museum
 const xhttp = new XMLHttpRequest();
@@ -56,10 +57,11 @@ function getRandom(max) {
     return Math.floor(Math.random() * max);
 }
 //Función para generar una lista de números aleatorios sin repetir ninguno
-function getRandomNumbersList() {
+function getRandomNumbersList(max) {
     let randArray = [];
-    for (let i = 0; i < MAX_FOTOS_BRITISH; i++) {
-        let rand = getRandom(british["datosExtra"][0]["gallery"].length);
+    for (let i = 0; i < max; i++) {
+        let rand = getRandom(british["events"].length);
+       
         while (contains(randArray, rand)) {
             rand = getRandom(british["datosExtra"][0]["gallery"].length);
         }
@@ -74,14 +76,22 @@ function printWebPage() {
     document.getElementById("descripcion_museo").innerHTML = british["british"]["description"];
 
     //Añadimos fotos aleatorias del british
-    let randoms = getRandomNumbersList();
+    let randoms = getRandomNumbersList(MAX_FOTOS_BRITISH);
+    let randomev = getRandomNumbersList(MAX_EV_BRITISH);
     for (let i = 0; i < MAX_FOTOS_BRITISH; i++) {
 
         document.getElementById("img_" + i.toString()).src = british["datosExtra"][0]["gallery"][randoms[i]];
        
 
     }
+    for (let i = 0; i < MAX_EV_BRITISH; i++) {
 
+        document.getElementById("img_ev_" + i.toString()).src = british["events"][randomev[i]]["image"];
+       document.getElementById("tit_ev_" + i.toString()).innerHTML = british["events"][randomev[i]]["name"];
+       document.getElementById("disc_ev_" + i.toString()).innerHTML = british["events"][randomev[i]]["description"];
+       
+
+    }
     
   
     document.getElementById("direccion").innerHTML = british["british"]["address"]["streetAddress"];
