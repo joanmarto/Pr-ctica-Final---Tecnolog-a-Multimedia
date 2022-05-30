@@ -20,8 +20,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
 
   <!--JavaScript-->
-  <script src="/js/buscador.js"></script>
-  <script src="/js/noticias.js"></script>
+  <script src="/js/buscador.js" defer></script>
+  <script src="/js/noticias.js" defer></script>
 
   <!--Título-->
   <title>Museos de Mallorca</title>
@@ -86,28 +86,21 @@
         <ul class="row d-lg-flex list-unstyled image-block justify-content-center px-lg-0 mx-lg-0">
           <li class="col-lg-4 col-md-5 image-block full-width p-3">
             <div class="image-block-inner">
-              <a class="mh-100"
-                href="https://www.ultimahora.es/noticias/cultura/2022/04/05/1718911/ministerio-cultura-destina-museu-mallorca-cabeza-augusto-encontrada-pollentia.html">
-                <img src="https://www.caib.es/pidip2front/jsp/image?codi=%2F2022%2F4%2F5%2FIT_1649160207082_89.png"
-                  class="img-responsive w-100"></a>
-
-              <h4 class="mt-3"><a
-                  href="https://www.ultimahora.es/noticias/cultura/2022/04/05/1718911/ministerio-cultura-destina-museu-mallorca-cabeza-augusto-encontrada-pollentia.html">El
-                  Ministerio de Cultura destina al Museu de Mallorca una cabeza de Augusto encontrada en Pollentia</a>
+              <a class="mh-100">
+                <img id="new_img_0" class="img-responsive w-100">
+              </a>
+              <h4 class="mt-3">
+                <a class = "titulo_noticia" id="new_title_0"></a>
               </h4>
+              <a id="new_0" class="read-more">Leer más &gt;</a>
               <!--POPUP-->
-              <a id = "new_0" class="read-more">Leer más &gt;</a>
               <div id="popupBox" class="white_content">
-
-                <h1 style="display:inline-block; float:left">Information</h1>
-                  <a href="javascript:void(0)"  class="textright close">X</a>
-                
-                  <p style="clear: both"></p>
-                  <p style="font-size:1.3em" class="popup-text">
-                    Titulo de la noticia
-                    <br/>
-                    <p id = "cuerpo-noticia" class="popup-text"></p>
-                  </p>
+                <a href="javascript:void(0)" onclick = "closePopup()" class="textright close">X</a>
+                <p style="clear: both"></p>
+                <p style="font-size:1.3em" class="popup-text" id="titulo_noticia">
+                  <br/>
+                <p id="cuerpo-noticia" class="popup-text"></p>
+                </p>
               </div>
               <div id="popupBackground" class="black_overlay"></div>
               <!--FIN POPUP-->
@@ -115,60 +108,55 @@
           </li>
           <li class="col-lg-4 col-md-5 image-block full-width p-3">
             <div class="image-block-inner">
-              <a class="mh-100"
-                href="https://www.cope.es/actualidad/cultura/noticias/historia-del-arte-espanol-1960-2020-museo-juan-march-palma-20220309_1958268">
-                <img
-                  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/ff/ed/07/photo0jpg.jpg?w=1200&h=-1&s=1"
-                  class="img-responsive w-100"></a>
-
-              <h4 class="mt-3"><a
-                  href="https://www.cope.es/actualidad/cultura/noticias/historia-del-arte-espanol-1960-2020-museo-juan-march-palma-20220309_1958268">La
-                  historia del arte español de 1960 a 2020, en el Museo Juan March de Palma</a></h4>
-              <a href="https://www.cope.es/actualidad/cultura/noticias/historia-del-arte-espanol-1960-2020-museo-juan-march-palma-20220309_1958268"
-                class="read-more">Leer más &gt;</a>
+              <a class="mh-100">
+                <img id="new_img_1" class="img-responsive w-100"></a>
+              <h4 class="mt-3">
+                <a class = "titulo_noticia" id="new_title_1"></a>
+              </h4>
+              <a id="new_1" class="read-more">Leer más &gt;</a>
             </div>
           </li>
           <li class="col-lg-4 col-md-5 image-block full-width p-3">
             <div class="image-block-inner">
-              <a class="mh-100" href="#">
-                <img src="https://raw.githubusercontent.com/solodev/recent-blog-posts/master/images/news-3.jpg"
-                  class="img-responsive w-100"></a>
-
-              <h4 class="mt-3"><a href="#">Prueba de noticia</a></h4>
-              <a href="#" class="read-more">Leer más &gt;</a>
+              <a class="mh-100">
+                <img id ="new_img_2" class="img-responsive w-100">
+              </a>
+              <h4 class="mt-3">
+                <a class = "titulo_noticia" id = "new_title_2"></a>
+              </h4>
+              <a id="new_2" class="read-more">Leer más &gt;</a>
             </div>
           </li>
           <li class="col-lg-4 col-md-5 image-block full-width p-3">
             <div class="image-block-inner">
-              <a class="mh-100" href="#">
-                <img src="https://raw.githubusercontent.com/solodev/recent-blog-posts/master/images/news-3.jpg"
-                  class="img-responsive w-100"></a>
-
-              <h4 class="mt-3"><a href="#">Prueba de noticia</a></h4>
-
-              <a href="#" class="read-more">Leer más &gt;</a>
+              <a class="mh-100">
+                <img id ="new_img_3" class="img-responsive w-100"></a>
+              <h4 class="mt-3">
+                <a class = "titulo_noticia" id ="new_title_3"></a>
+              </h4>
+              <a id = "new_3" class="read-more">Leer más &gt;</a>
             </div>
           </li>
-          <!--Prueba noticia desde JSON-->
           <li class="col-lg-4 col-md-5 image-block full-width p-3">
             <div class="image-block-inner">
-              <a class="mh-100" href="#">
-                <img id = "imagen-noticia-1"
-                  class="img-responsive w-100"></a>
-
-              <h4 class="mt-3"><a href="#">Prueba de noticia</a></h4>
-              <a href="#" class="read-more">Leer más &gt;</a>
+              <a class="mh-100">
+                <img id="new_img_4" class="img-responsive w-100"></a>
+              <h4 class="mt-3">
+                <a class = "titulo_noticia" id = "new_title_4"></a>
+              </h4>
+              <a id ="new_4" class="read-more">Leer más &gt;</a>
             </div>
           </li>
-          
           <li class="col-lg-4 col-md-5 image-block full-width p-3">
             <div class="image-block-inner">
-              <a class="mh-100" href="#">
-                <img src="https://raw.githubusercontent.com/solodev/recent-blog-posts/master/images/news-3.jpg"
-                  class="img-responsive w-100"></a>
+              <a class="mh-100">
+                <img id ="new_img_5"class="img-responsive w-100">
+              </a>
 
-              <h4 class="mt-3 "><a href="#" id="hola">prueba </a></h4>
-              <a href="#" class="read-more">Leer más &gt;</a>
+              <h4 class="mt-3 ">
+                <a class = "titulo_noticiaid" id ="new_title_5"></a>
+              </h4>
+              <a id="new_5" class="read-more">Leer más &gt;</a>
             </div>
           </li>
         </ul>
