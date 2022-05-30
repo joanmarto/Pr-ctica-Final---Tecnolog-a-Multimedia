@@ -84,16 +84,17 @@ function printWebPage() {
        
 
     }
-    for (let i = 1; i <= MAX_EV_BRITISH; i++) {
+   
+    for (let i = 0; i < MAX_EV_BRITISH; i++) {
 
-    /*    document.getElementById("img_ev_" + i.toString()).src = british["events"][i]["image"];
-        console.log(british["events"][randomev[i]]["image"])
-       document.getElementById("tit_ev_" + i.toString()).innerHTML = british["events"][i]["name"];*/
-       /*document.getElementById("disc_ev_" + i.toString()).innerHTML = british["events"][randomev[i]]["description"];*/
+        document.getElementById("img_ev_" + i.toString()).src = british["events"][i]["image"];
+       
+       document.getElementById("tit_ev_" + i.toString()).innerHTML = british["events"][i]["name"];
+       document.getElementById("desc_ev_" + i.toString()).innerHTML = british["events"][i]["description"];
        
 
     }
-    
+    console.log(randomev)
   
     document.getElementById("direccion").innerHTML = british["british"]["address"]["streetAddress"];
     document.getElementById("apertura").innerHTML = british["british"]["openingHours"];

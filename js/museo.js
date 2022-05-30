@@ -51,7 +51,7 @@ function printWebPage() {
   document.getElementById("video").src = museos[id]["url"];
 }
 
-function goToPage(){
+function goToPage() {
   document.location.assign(museos[id]["sameAs"]);
 }
 
