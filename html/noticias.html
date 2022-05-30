@@ -95,8 +95,22 @@
                   href="https://www.ultimahora.es/noticias/cultura/2022/04/05/1718911/ministerio-cultura-destina-museu-mallorca-cabeza-augusto-encontrada-pollentia.html">El
                   Ministerio de Cultura destina al Museu de Mallorca una cabeza de Augusto encontrada en Pollentia</a>
               </h4>
-              <a href="https://www.ultimahora.es/noticias/cultura/2022/04/05/1718911/ministerio-cultura-destina-museu-mallorca-cabeza-augusto-encontrada-pollentia.html"
-                class="read-more">Leer más &gt;</a>
+              <!--POPUP-->
+              <a onclick = "showPopup()" class="read-more">Leer más &gt;</a>
+              <div id="popupBox" class="white_content">
+
+                <h1 style="display:inline-block; float:left">Information</h1>
+                  <a href="javascript:void(0)" onclick="closePopup()" class="textright close">X</a>
+                
+                  <p style="clear: both"></p>
+                  <p style="font-size:1.3em" class="popup-text">
+                    Titulo de la noticia
+                    <br/>
+                    <p id = "cuerpo-noticia" class="popup-text"></p>
+                  </p>
+              </div>
+              <div id="popupBackground" class="black_overlay"></div>
+              <!--FIN POPUP-->
             </div>
           </li>
           <li class="col-lg-4 col-md-5 image-block full-width p-3">
