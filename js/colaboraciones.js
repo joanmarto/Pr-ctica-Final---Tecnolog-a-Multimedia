@@ -1,7 +1,7 @@
 //Variables
 var british;
 //Número máximo de museos en el grid container
-const MAX_FOTOS_BRITISH = 16;
+const MAX_FOTOS_BRITISH = 6;
 const MAX_EV_BRITISH=4;
 
 //Petición para obtener el JSON del British Museum
@@ -84,17 +84,24 @@ function printWebPage() {
        
 
     }
-   
+for(let i = 0; i < british["categories"].length; i++){
+    
+    document.getElementById("video_"+i.toString()).src =british["categories"][i]["MediaObject"]["contentUrl"];
+
+    document.getElementById("descripcion_"+i.toString()).src =british["categories"][i]["description"];
+   /* document.getElementById("titulo_"+i.toString()).innerHTML =british["categories"][i]["name"];*/
+    
+}
     for (let i = 0; i < MAX_EV_BRITISH; i++) {
 
-        document.getElementById("img_ev_" + i.toString()).src = british["events"][i]["image"];
+        document.getElementById("img_ev_" + i.toString()).src = british["events"][randomev[i]]["image"];
        
-       document.getElementById("tit_ev_" + i.toString()).innerHTML = british["events"][i]["name"];
-       document.getElementById("desc_ev_" + i.toString()).innerHTML = british["events"][i]["description"];
-       
+       document.getElementById("tit_ev_" + i.toString()).innerHTML = british["events"][randomev[i]]["name"];
+       document.getElementById("desc_ev_" + i.toString()).innerHTML = british["events"][randomev[i]]["description"];
+       document.getElementById("fech_ev_" + i.toString()).innerHTML = british["events"][randomev[i]]["startDate"]+" - "+ british["events"][i]["endDate"];
 
     }
-    console.log(randomev)
+    
   
     document.getElementById("direccion").innerHTML = british["british"]["address"]["streetAddress"];
     document.getElementById("apertura").innerHTML = british["british"]["openingHours"];
@@ -104,9 +111,9 @@ function printWebPage() {
    
 }
 
-/*function goToPage(){
-  document.location.assign(museos[id]["sameAs"]);
-}*/
+function goToPage(){
+  document.location.assign(british["british"]["hasMap"]);
+}
 
 //API del tiempo
 function esperaevent(){
