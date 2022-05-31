@@ -14,7 +14,10 @@ h2 {
   background-color: rgba(27, 32, 36);
 
 }
+#enviar{
 
+  max-height: 40px;
+}
 .titulo_centrado {
   text-align: center;
 }

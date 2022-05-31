@@ -12,7 +12,10 @@
 	font-smooth: antialiased;
 	text-rendering: optimizeLegibility;
 }
+#enviar{
 
+	max-height: 40px;
+  }
 .navbar {
 	background-color: rgba(27, 32, 36);
 }
