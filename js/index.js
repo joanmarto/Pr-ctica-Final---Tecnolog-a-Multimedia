@@ -108,15 +108,15 @@ function error(err) {
 
 //Función para mostrar los museos más cercanos
 function addClosermuseums() {
-  var distancias = [museos.Museum.length];
-  var distanciasAux = [museos.Museum.length];
+  var distancias = [];
+  var distanciasAux = [];
+ 
   //se calculan todas las distancias entre museos y ubicacion actual
-  for (var i = 0; i < museos.length; i++) {
-    var km = getDistanceFromLatLonInKm(userLat, userLng, museos.Museum[i]["latitude"], museos.Museum[i]["longitude"])
+  for (var i = 0; i < museos.Museum.length; i++) {
+    var km = getDistanceFromLatLonInKm(userLat, userLng, museos.Museum[i]["GeoCoordinates"]["latitude"], museos.Museum[i]["GeoCoordinates"]["longitude"])
     distancias[i] = km;
     distanciasAux[i] = km;
   }
-
   //ordenamos distancias
   distancias.sort((a, b) => a - b);
 
@@ -148,7 +148,7 @@ function addMap() {
   var coord = [];
   for (var i = 0; i < museos.Museum.length; i++) {
     //Obtenemos todas las coordenadas
-    coord[i] = { lat: Number(museos.Museum[i]["latitude"]), lng: Number(museos.Museum[i]["longitude"]) };
+    coord[i] = { lat: Number(museos.Museum[i]["GeoCoordinates"]["latitude"]), lng: Number(museos.Museum[i]["GeoCoordinates"]["longitude"]) };
   }
 
   //Creamos el mapa
