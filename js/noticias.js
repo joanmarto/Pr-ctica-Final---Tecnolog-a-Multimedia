@@ -2,7 +2,7 @@ var noticias;
 
 const MAX_NEWS = 6;
 var url = 'https://api.currentsapi.services/v1/search?' +
-    'keywords=museo&' +
+    'keywords=museos&' +
     'country=es&' +
     'language=es&' +
     'apiKey=LBsLwjGyg9LZKS6RymQf_jmJBAlkVNaJK_yuZtYvCQSfgXbO';
@@ -14,7 +14,7 @@ fetch(req)
     }).then((news) => {
 
         noticias = news;
-        console.log(noticias.news[0])
+        console.log(noticias.news)
         addNews();
     })
     .catch(error => {
@@ -26,6 +26,7 @@ fetch(req)
 
 function addNews() {
     for (let i = 0; i < MAX_NEWS; i++) {
+      
         //Añadimos el titulo
         document.getElementById("new_title_" + i.toString()).innerHTML = noticias.news[i]["title"];
         document.getElementById("new_title_" + i.toString()).href = noticias.news[i]["url"];
