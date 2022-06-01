@@ -2,7 +2,7 @@ var noticias;
 
 const MAX_NEWS = 6;
 var url = 'https://api.currentsapi.services/v1/search?' +
-    'keywords=museo&' +
+    'keywords=museos&' +
     'country=es&' +
     'language=es&' +
     'apiKey=LBsLwjGyg9LZKS6RymQf_jmJBAlkVNaJK_yuZtYvCQSfgXbO';
