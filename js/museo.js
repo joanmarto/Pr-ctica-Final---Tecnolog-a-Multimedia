@@ -18,12 +18,15 @@ xhttp.onreadystatechange = function () {
 
     // pintar en la página web
     printWebPage();
+
+    //Api tiempo
+    window.addEventListener('load', loadAPIWeather());
   }
 }
 
 function addMap() {
   //Coordenadas del museo
-  var coord = { lat: Number(museos[id]["latitude"]), lng: Number(museos[id]["longitude"]) };
+  var coord = { lat: Number(museos.Museum[id]["GeoCoordinates"]["latitude"]), lng: Number(museos.Museum[id]["GeoCoordinates"]["longitude"]) };
   //Creamos el mapa
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
@@ -37,26 +40,26 @@ function addMap() {
 }
 
 function printWebPage() {
-  document.getElementById("title").innerHTML = museos[id]["name"];
+  document.getElementById("title").innerHTML = museos.Museum[id]["name"];
   //console.log(museos[id]["name"]);
-  document.getElementById("titulo_museo").innerHTML = museos[id]["name"];
-  document.getElementById("descripcion_museo").innerHTML = museos[id]["description"];
-  document.getElementById("imagen_museo").src = museos[id]["image"];
+  document.getElementById("titulo_museo").innerHTML = museos.Museum[id]["name"];
+  document.getElementById("descripcion_museo").innerHTML = museos.Museum[id]["description"];
+  document.getElementById("imagen_museo").src = museos["Museum"][id]["image"];
 
-  document.getElementById("direccion").innerHTML = museos[id]["address"];
-  document.getElementById("apertura").innerHTML = museos[id]["openingHoursSpecification"];
-  document.getElementById("telefono").innerHTML = museos[id]["telephone"];
-  document.getElementById("email").innerHTML = museos[id]["email"];
-  document.getElementById("web").innerHTML = museos[id]["sameAs"];
-  document.getElementById("video").src = museos[id]["url"];
+  document.getElementById("direccion").innerHTML = museos.Museum[id]["address"];
+  document.getElementById("apertura").innerHTML = museos.Museum[id]["openingHoursSpecification"];
+  document.getElementById("telefono").innerHTML = museos.Museum[id]["telephone"];
+  document.getElementById("email").innerHTML = museos.Museum[id]["email"];
+  document.getElementById("web").innerHTML = museos.Museum[id]["sameAs"];
+  document.getElementById("video").src = museos.Museum[id]["url"];
 }
 
 function goToPage() {
-  document.location.assign(museos[id]["sameAs"]);
+  document.location.assign(museos.Museum[id]["sameAs"]);
 }
 
 //API del tiempo
-window.addEventListener('load', () => {
+ function loadAPIWeather() {
 
   let temperaturaValor = document.getElementById('temperatura-valor')
   let temperaturaDescripcion = document.getElementById('temperatura-descripcion')
@@ -65,9 +68,9 @@ window.addEventListener('load', () => {
   let iconoAnimado = document.getElementById('icono-animado')
 
   let vientoVelocidad = document.getElementById('viento-velocidad')
-
-  let lat = museos[id]["latitude"]
-  let lon = museos[id]["longitude"]
+console.log(museos);
+  let lat = museos.Museum[id]["GeoCoordinates"]["latitude"]
+  let lon = museos.Museum[id]["GeoCoordinates"]["longitude"]
   //Lamada a la api con la ubicación del museo    
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=91eb185b92ada1500fb25d3a3f408c92`
 
@@ -134,4 +137,26 @@ window.addEventListener('load', () => {
     .catch(error => {
       console.log(error)
     })
-})
+}
+
+//JSON-LD
+function initJSONLD() {
+  document.querySelector("script[type='application/ld+json']").innerHTML = `
+    "@context": "http://www.schema.org",
+    "@type": "Museum",
+    "name": "${museos.Museum[id]["name"]}",
+    "image": "${museos.Museum[id]["image"]}",
+    "description": "${museos.Museum[id]["description"]}",
+    "sameAs": "${museos.Museum[id]["sameAs"]}",
+    "telephone": "${museos.Museum[id]["telephone"]}",
+    "openingHoursSpecification": "${museos.Museum[id]["openingHoursSpecification"]}",
+    "address": "${museos.Museum[id]["address"]}",
+    "GeoCoordinates": {
+      "@type":"GeoCoordinates",
+      "longitude": "${museos.Museum[id]["longitude"]}",
+      "latitude": "${museos.Museum[id]["latitude"]}"
+    },
+    "url": "${museos.Museum[id]["url"]}",
+    "email": "${museos.Museum[id]["email"]}",
+    `;
+}

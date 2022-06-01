@@ -11,8 +11,8 @@ xhttp_search.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         museos = JSON.parse(this.responseText);
         //Guardamos los nombres de los museos en el array
-        for (var i = 0; i < museos.length; i++) {
-            nom_museos[i] = museos[i]["name"];
+        for (var i = 0; i < museos.Museum.length; i++) {
+            nom_museos[i] = museos.Museum[i]["name"];
         }
         autocomplete(document.getElementById("buscador"), nom_museos);
     }
@@ -116,12 +116,12 @@ function autocomplete(inp, arr) {
     document.getElementById("enviar").addEventListener("click", function (e) {
         //Buscamos la posición del museo seleccionado en el JSON
         var pos;
-        for (pos = 0; pos < museos.length; pos++) {
-            if (equals(museos[pos]["name"], selected)) {
+        for (pos = 0; pos < museos.Museum.length; pos++) {
+            if (equals(museos.Museum[pos]["name"], selected)) {
                 break;
             }
         }
-        if (pos == museos.length) { //Error
+        if (pos == museos.Museum.length) { //Error
             alert("Escribe el nombre de un museo válido")
         } else {
             //Cargamos la página del museo seleccionado

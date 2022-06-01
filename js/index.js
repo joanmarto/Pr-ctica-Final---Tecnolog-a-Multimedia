@@ -26,6 +26,7 @@ xhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
 
     museos = JSON.parse(this.responseText);
+    console.log(museos.Museum[1]);
     navigator.geolocation.getCurrentPosition(success, error, options);
     //Esperamos a que se obtenga la ubicación
     setTimeout(addContentPage, 500);
@@ -41,29 +42,31 @@ function addContentPage() {
     //Añadimos museos aleatorios
     let randoms = getRandomNumbersList();
     for (let i = 0; i < MAX_MUSEUMS_GRID_CONTAINER; i++) {
-      document.getElementById("titulo_galeria_index" + i.toString()).innerHTML = museos[randoms[i]]["name"];
-      document.getElementById("foto_galeria_index" + i.toString()).src = museos[randoms[i]]["image"];
+      document.getElementById("titulo_galeria_index" + i.toString()).innerHTML = museos.Museum[randoms[i]].name;
+      document.getElementById("foto_galeria_index" + i.toString()).src = museos.Museum[randoms[i]].image;
       document.getElementById("titulo_galeria_index" + i.toString()).href = "museo.html?" + randoms[i].toString();
     }
     //Creamos un array con los museos para el slider
     let otherMuseums = [];
     for(let i = MAX_MUSEUMS_GRID_CONTAINER; i < MAX_MUSEUMS_GRID_CONTAINER + MAX_MUSEUMS_SLIDER; i++){
-      otherMuseums[i - MAX_MUSEUMS_GRID_CONTAINER] = museos[randoms[i]];  
+      otherMuseums[i - MAX_MUSEUMS_GRID_CONTAINER] = museos.Museum[randoms[i]];  
     }
+  //  //console.log(otherMuseums);
     addOtherMuseums(otherMuseums);
   }
 }
 
 //Función para añadir museos al carrusel
 function addOtherMuseums(arr){
-  console.log(arr[0]["name"]);
+  //console.log(arr[0]["name"]);
+  console.log(arr[0].name);
   for(let i = 0; i < MAX_MUSEUMS_SLIDER; i++){
     //Añadimos una parte de la descripción (275 caracteres)
-    let description = arr[i]["description"].substring(0, 275);
+    let description = arr[i].description.substring(0, 275);
     description += "...";
     //Insertamos los elementos
-    document.getElementById("slide_title_" + i.toString()).innerHTML = arr[i]["name"];
-    document.getElementById("slide_img_" + i.toString()).src = arr[i]["image"];
+    document.getElementById("slide_title_" + i.toString()).innerHTML = arr[i].name;
+    document.getElementById("slide_img_" + i.toString()).src = arr[i].image;
     document.getElementById("slide_desc_" + i.toString()).innerHTML =  description;
   }
 }
@@ -71,10 +74,10 @@ function addOtherMuseums(arr){
 //Función para generar una lista de números aleatorios sin repetir ninguno
 function getRandomNumbersList(){
   let randArray = [];
-  for(let i = 0; i < museos.length; i++){
-    let rand = getRandom(museos.length);
+  for(let i = 0; i < museos.Museum.length; i++){
+    let rand = getRandom(museos.Museum.length);
     while(contains(randArray, rand)){
-      rand = getRandom(museos.length);
+      rand = getRandom(museos.Museum.length);
     }
     randArray[i] = rand;
   }
@@ -109,11 +112,11 @@ function error(err) {
 
 //Función para mostrar los museos más cercanos
 function addClosermuseums() {
-  var distancias = [museos.length];
-  var distanciasAux = [museos.length];
+  var distancias = [museos.Museum.length];
+  var distanciasAux = [museos.Museum.length];
   //se calculan todas las distancias entre museos y ubicacion actual
   for (var i = 0; i < museos.length; i++) {
-    var km = getDistanceFromLatLonInKm(userLat, userLng, museos[i]["latitude"], museos[i]["longitude"])
+    var km = getDistanceFromLatLonInKm(userLat, userLng, museos.Museum[i]["latitude"], museos.Museum[i]["longitude"])
     //console.log(museos[i]["name"] + ": a " + km + " de distancia")
     distancias[i] = km;
     distanciasAux[i] = km;
@@ -125,8 +128,8 @@ function addClosermuseums() {
   for (var i = 0; i < MAX_MUSEUMS_GRID_CONTAINER; i++) {
     for (var j = 0; j < distancias.length; j++) {
       if (distancias[i] == distanciasAux[j]) {
-        document.getElementById("titulo_galeria_index" + i.toString()).innerHTML = museos[j]["name"];
-        document.getElementById("foto_galeria_index" + i.toString()).src = museos[j]["image"];
+        document.getElementById("titulo_galeria_index" + i.toString()).innerHTML = museos.Museum[j]["name"];
+        document.getElementById("foto_galeria_index" + i.toString()).src = museos.Museum[j]["image"];
         document.getElementById("titulo_galeria_index" + i.toString()).href = "museo.html?" + j.toString();
       }
     }
@@ -136,7 +139,7 @@ function addClosermuseums() {
   for(let i = MAX_MUSEUMS_GRID_CONTAINER; i < MAX_MUSEUMS_GRID_CONTAINER + MAX_MUSEUMS_SLIDER; i++){
     for(let j = 0; j < distancias.length; j++){
       if (distancias[i] == distanciasAux[j]) {
-        otherMuseums[i - MAX_MUSEUMS_GRID_CONTAINER] = museos[j];
+        otherMuseums[i - MAX_MUSEUMS_GRID_CONTAINER] = museos.Museum[j];
       }
     }
   }
@@ -148,9 +151,9 @@ function addClosermuseums() {
 function addMap() {
   document.getElementById("map_title").innerHTML = "Localiza nuestros museos";
   var coord = [];
-  for (var i = 0; i < museos.length; i++) {
+  for (var i = 0; i < museos.Museum.length; i++) {
     //Obtenemos todas las coordenadas
-    coord[i] = { lat: Number(museos[i]["latitude"]), lng: Number(museos[i]["longitude"]) };
+    coord[i] = { lat: Number(museos.Museum[i]["latitude"]), lng: Number(museos.Museum[i]["longitude"]) };
   }
 
   //Creamos el mapa
@@ -161,22 +164,22 @@ function addMap() {
 
   //Añadimos los marcadores de los museos
   var marker = [];
-  for (var i = 0; i < museos.length; i++) {
+  for (var i = 0; i < museos.Museum.length; i++) {
     marker[i] = new google.maps.Marker({
       position: coord[i],
       map: map,
-      title: museos[i]["name"]
+      title: museos.Museum[i]["name"]
     });
-    let selected = museos[i]["name"];
+    let selected = museos.Museum[i]["name"];
     //Al clicar en el marcador de un museo se muestra su página web
     marker[i].addListener("click", () => {
       var pos;
-      for (pos = 0; pos < museos.length; pos++) {
-        if (equals(museos[pos]["name"], selected)) {
+      for (pos = 0; pos < museos.Museum.length; pos++) {
+        if (equals(museos.Museum[pos]["name"], selected)) {
           break;
         }
       }
-      if (pos == museos.length) { //Error
+      if (pos == museos.Museum.length) { //Error
         alert("Escribe el nombre de un museo válido")
       } else {
         //Cargamos la página del museo seleccionado
