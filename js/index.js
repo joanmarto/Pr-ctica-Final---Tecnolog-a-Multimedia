@@ -26,7 +26,6 @@ xhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
 
     museos = JSON.parse(this.responseText);
-    console.log(museos.Museum[1]);
     navigator.geolocation.getCurrentPosition(success, error, options);
     //Esperamos a que se obtenga la ubicación
     setTimeout(addContentPage, 500);
@@ -51,15 +50,12 @@ function addContentPage() {
     for(let i = MAX_MUSEUMS_GRID_CONTAINER; i < MAX_MUSEUMS_GRID_CONTAINER + MAX_MUSEUMS_SLIDER; i++){
       otherMuseums[i - MAX_MUSEUMS_GRID_CONTAINER] = museos.Museum[randoms[i]];  
     }
-  //  //console.log(otherMuseums);
     addOtherMuseums(otherMuseums);
   }
 }
 
 //Función para añadir museos al carrusel
 function addOtherMuseums(arr){
-  //console.log(arr[0]["name"]);
-  console.log(arr[0].name);
   for(let i = 0; i < MAX_MUSEUMS_SLIDER; i++){
     //Añadimos una parte de la descripción (275 caracteres)
     let description = arr[i].description.substring(0, 275);
@@ -117,7 +113,6 @@ function addClosermuseums() {
   //se calculan todas las distancias entre museos y ubicacion actual
   for (var i = 0; i < museos.length; i++) {
     var km = getDistanceFromLatLonInKm(userLat, userLng, museos.Museum[i]["latitude"], museos.Museum[i]["longitude"])
-    //console.log(museos[i]["name"] + ": a " + km + " de distancia")
     distancias[i] = km;
     distanciasAux[i] = km;
   }
