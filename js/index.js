@@ -58,7 +58,7 @@ function addContentPage() {
 function addOtherMuseums(arr){
   for(let i = 0; i < MAX_MUSEUMS_SLIDER; i++){
     //Añadimos una parte de la descripción (275 caracteres)
-    let description = arr[i].description.substring(0, 275);
+    let description = arr[i]["description"].substring(0, 275);
     description += "...";
     //Insertamos los elementos
     document.getElementById("slide_title_" + i.toString()).innerHTML = arr[i].name;
