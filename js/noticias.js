@@ -28,6 +28,7 @@ function addNews() {
     for (let i = 0; i < MAX_NEWS; i++) {
         //Añadimos el titulo
         document.getElementById("new_title_" + i.toString()).innerHTML = noticias.news[i]["title"];
+        document.getElementById("new_title_" + i.toString()).href = noticias.news[i]["url"];
         //Añadimos la foto
         if (noticias.news[i]["image"] != "None") {
             document.getElementById("new_img_" + i.toString()).src = noticias.news[i]["image"];
