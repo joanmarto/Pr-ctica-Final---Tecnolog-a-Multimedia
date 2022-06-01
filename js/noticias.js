@@ -1,40 +1,43 @@
 var noticias;
 
 const MAX_NEWS = 6;
-
-var url = 'https://newsapi.org/v2/everything?' +
-    'q=Museo&' +
-    'from=2022-05-30&' +
-    'sortBy=popularity&' +
-    'apiKey=61f7c83cb50e40b1bb8912322fcbe185';
-
+var url = 'https://api.currentsapi.services/v1/search?' +
+    'keywords=museo&' +
+    'country=es&' +
+    'language=es&' +
+    'apiKey=LBsLwjGyg9LZKS6RymQf_jmJBAlkVNaJK_yuZtYvCQSfgXbO';
 var req = new Request(url);
-
 fetch(req)
-    .then((response) => {
-        //It returns a promise which resolves with the result of parsing the body text as JSON
+    .then(function (response) {
         return response.json();
+
     }).then((news) => {
-        console.log(news.articles);
-        noticias = news.articles;
+
+        noticias = news;
+        console.log(noticias.news[0])
         addNews();
     })
     .catch(error => {
         console.log(error)
     })
 
+
+
+
 function addNews() {
     for (let i = 0; i < MAX_NEWS; i++) {
         //Añadimos el titulo
-        document.getElementById("new_title_" + i.toString()).innerHTML = noticias[i]["title"];
+        document.getElementById("new_title_" + i.toString()).innerHTML = noticias.news[i]["title"];
         //Añadimos la foto
-        document.getElementById("new_img_" + i.toString()).src = noticias[i]["urlToImage"];
+        if (noticias.news[i]["image"] != "None") {
+            document.getElementById("new_img_" + i.toString()).src = noticias.news[i]["image"];
+        }
         //Añadimos el event listener para abrir el popup
         document.getElementById("new_" + i.toString()).addEventListener('click', () => {
             document.getElementById('popupBox').style.display = 'block';
             document.getElementById('popupBackground').style.display = 'block';
-            document.getElementById("titulo_noticia").innerHTML = noticias[i]["title"];
-            document.getElementById("cuerpo-noticia").innerHTML = noticias[i]["description"];
+            document.getElementById("titulo_noticia").innerHTML = noticias.news[i]["title"];
+            document.getElementById("cuerpo-noticia").innerHTML = noticias.news[i]["description"];
         });
     }
 }
