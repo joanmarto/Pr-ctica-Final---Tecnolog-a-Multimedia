@@ -26,9 +26,7 @@ xhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
 
     museos = JSON.parse(this.responseText);
-    //navigator.geolocation.getCurrentPosition(success, error, options);
-  
-    document.getElementById("logo").addEventListener('click', navigator.geolocation.getCurrentPosition(success, error, options));
+    navigator.geolocation.getCurrentPosition(success, error, options);
   }
 }
 
