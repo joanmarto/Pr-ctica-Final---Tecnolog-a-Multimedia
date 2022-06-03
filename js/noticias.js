@@ -10,23 +10,17 @@ var req = new Request(url);
 fetch(req)
     .then(function (response) {
         return response.json();
-
     }).then((news) => {
-
         noticias = news;
-        console.log(noticias.news)
         addNews();
     })
     .catch(error => {
         console.log(error)
     })
 
-
-
-
+//Añadimos la noticias extraidas de la API
 function addNews() {
     for (let i = 0; i < MAX_NEWS; i++) {
-      
         //Añadimos el titulo
         document.getElementById("new_title_" + i.toString()).innerHTML = noticias.news[i]["title"];
         document.getElementById("new_title_" + i.toString()).href = noticias.news[i]["url"];

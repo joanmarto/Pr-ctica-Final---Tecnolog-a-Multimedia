@@ -1,7 +1,6 @@
 //para escoger el museo en cuestion
 var id = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.document.URL.length);
 id = id.replace("?", "");
-console.log(id);
 
 var museos;
 
@@ -19,7 +18,7 @@ xhttp.onreadystatechange = function () {
     //api google maps para mostrar la posición del museo
     addMap();
 
-    // pintar en la página web
+    //cargamos el contenido del json en la página
     printWebPage();
 
     //Api tiempo
@@ -44,7 +43,6 @@ function addMap() {
 
 function printWebPage() {
   document.getElementById("title").innerHTML = museos.Museum[id]["name"];
-  //console.log(museos[id]["name"]);
   document.getElementById("titulo_museo").innerHTML = museos.Museum[id]["name"];
   document.getElementById("descripcion_museo").innerHTML = museos.Museum[id]["description"];
   document.getElementById("imagen_museo").src = museos["Museum"][id]["image"];
@@ -71,7 +69,7 @@ function goToPage() {
   let iconoAnimado = document.getElementById('icono-animado')
 
   let vientoVelocidad = document.getElementById('viento-velocidad')
-console.log(museos);
+
   let lat = museos.Museum[id]["GeoCoordinates"]["latitude"]
   let lon = museos.Museum[id]["GeoCoordinates"]["longitude"]
   //Lamada a la api con la ubicación del museo    
@@ -80,20 +78,16 @@ console.log(museos);
   fetch(url)
     .then(response => { return response.json() })
     .then(data => {
-      //console.log(data)
 
       let temp = Math.round((data.main.temp - 273))
-      //console.log(temp)
       temperaturaValor.textContent = `${temp} °C`
 
-      //console.log(data.weather[0].description)
       let desc = data.weather[0].description
-      // temperaturaDescripcion.textContent = desc.toUpperCase()
       ubicacion.textContent = data.name
 
       vientoVelocidad.textContent = `${data.wind.speed} m/s`
 
-      //iconos dinámicos
+      //svg's dinámicos
       switch (data.weather[0].main) {
         case 'Thunderstorm':
           iconoAnimado.src = '/animated/thunder.svg'
@@ -135,7 +129,6 @@ console.log(museos);
           //console.log('por defecto');
           temperaturaDescripcion.textContent = 'NUBES';
       }
-
     })
     .catch(error => {
       console.log(error)

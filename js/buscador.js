@@ -7,7 +7,6 @@ xhttp_search.open('GET', '/json/museos.json', true)
 xhttp_search.send();
 xhttp_search.onreadystatechange = function () {
 
-
     if (this.readyState == 4 && this.status == 200) {
         museos = JSON.parse(this.responseText);
         //Guardamos los nombres de los museos en el array
@@ -37,7 +36,7 @@ function initNavbar(){
     })
 }
 
-//Función de autocompletado 
+//Funciones de autocompletado 
 function autocomplete(inp, arr) {
     var currentFocus;
     inp.addEventListener("input", function (e) {
@@ -68,16 +67,13 @@ function autocomplete(inp, arr) {
     inp.addEventListener("keydown", function (e) {
         var x = document.getElementById(this.id + "autocomplete-list");
         if (x) x = x.getElementsByTagName("div");
-        if (e.keyCode == 40) {
-
+        if (e.keyCode == 40) { //Flecha hacia abajo
             currentFocus++;
-
             addActive(x);
-        } else if (e.keyCode == 38) {
+        } else if (e.keyCode == 38) { //Flecha hacia arriba
             currentFocus--;
-
             addActive(x);
-        } else if (e.keyCode == 13) {
+        } else if (e.keyCode == 13) { //Enter
 
             e.preventDefault();
             if (currentFocus > -1) {
@@ -86,6 +82,7 @@ function autocomplete(inp, arr) {
             }
         }
     });
+
     function addActive(x) {
         if (!x) return false;
         removeActive(x);
@@ -94,13 +91,14 @@ function autocomplete(inp, arr) {
 
         x[currentFocus].classList.add("autocomplete-active");
     }
+
     function removeActive(x) {
         for (var i = 0; i < x.length; i++) {
             x[i].classList.remove("autocomplete-active");
         }
     }
-    function closeAllLists(elmnt) {
 
+    function closeAllLists(elmnt) {
         var x = document.getElementsByClassName("autocomplete-items");
         for (var i = 0; i < x.length; i++) {
             if (elmnt != x[i] && elmnt != inp) {

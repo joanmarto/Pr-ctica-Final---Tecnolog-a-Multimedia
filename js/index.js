@@ -26,13 +26,11 @@ xhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
 
     museos = JSON.parse(this.responseText);
-    navigator.geolocation.getCurrentPosition(success, error, options);
-    //Esperamos a que se obtenga la ubicación
-    setTimeout(addContentPage, 500);
+    navigator.geolocation.getCurrentPosition(success, error, options); 
   }
 }
 
-function addContentPage() {
+function addPageContent() {
 
   if (!locationError) {//Comprobamos si ha habido error
     addClosermuseums();
@@ -99,11 +97,15 @@ function success(pos) {
   var crd = pos.coords;
   userLat = crd.latitude;
   userLng = crd.longitude;
+  //Añadimos el contenido de la página
+  addPageContent();
 }
 
 function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
   locationError = true;
+  //Añadimos el contenido de la página
+  addPageContent();
 };
 
 //Función para mostrar los museos más cercanos
