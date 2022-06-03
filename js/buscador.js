@@ -17,21 +17,21 @@ xhttp_search.onreadystatechange = function () {
     }
 }
 
-function initNavbar(){
+function initNavbar() {
     //Insertamos el logo de la página
     document.getElementById("logo").src = 'https://museosdemallorca.netlify.app/images/icono.svg';
 
     //Insertamos los events listeners para el menu
-    document.getElementById("nav_inicio").addEventListener('click', () =>{
+    document.getElementById("nav_inicio").addEventListener('click', () => {
         location.assign("/html/index.html");
     })
-    document.getElementById("nav_contacto").addEventListener('click', () =>{
+    document.getElementById("nav_contacto").addEventListener('click', () => {
         location.assign("/html/contacto.html");
     })
-    document.getElementById("nav_colab").addEventListener('click', () =>{
+    document.getElementById("nav_colab").addEventListener('click', () => {
         location.assign("/html/colaboraciones.html");
     })
-    document.getElementById("nav_news").addEventListener('click', () =>{
+    document.getElementById("nav_news").addEventListener('click', () => {
         location.assign("/html/noticias.html");
     })
 }

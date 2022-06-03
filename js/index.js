@@ -26,7 +26,7 @@ xhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
 
     museos = JSON.parse(this.responseText);
-    navigator.geolocation.getCurrentPosition(success, error, options); 
+    navigator.geolocation.getCurrentPosition(success, error, options);
   }
 }
 
@@ -45,32 +45,32 @@ function addPageContent() {
     }
     //Creamos un array con los museos para el slider
     let otherMuseums = [];
-    for(let i = MAX_MUSEUMS_GRID_CONTAINER; i < MAX_MUSEUMS_GRID_CONTAINER + MAX_MUSEUMS_SLIDER; i++){
-      otherMuseums[i - MAX_MUSEUMS_GRID_CONTAINER] = museos.Museum[randoms[i]];  
+    for (let i = MAX_MUSEUMS_GRID_CONTAINER; i < MAX_MUSEUMS_GRID_CONTAINER + MAX_MUSEUMS_SLIDER; i++) {
+      otherMuseums[i - MAX_MUSEUMS_GRID_CONTAINER] = museos.Museum[randoms[i]];
     }
     addOtherMuseums(otherMuseums);
   }
 }
 
 //Función para añadir museos al carrusel
-function addOtherMuseums(arr){
-  for(let i = 0; i < MAX_MUSEUMS_SLIDER; i++){
+function addOtherMuseums(arr) {
+  for (let i = 0; i < MAX_MUSEUMS_SLIDER; i++) {
     //Añadimos una parte de la descripción (275 caracteres)
     let description = arr[i]["description"].substring(0, 275);
     description += "...";
     //Insertamos los elementos
     document.getElementById("slide_title_" + i.toString()).innerHTML = arr[i].name;
     document.getElementById("slide_img_" + i.toString()).src = arr[i].image;
-    document.getElementById("slide_desc_" + i.toString()).innerHTML =  description;
+    document.getElementById("slide_desc_" + i.toString()).innerHTML = description;
   }
 }
 
 //Función para generar una lista de números aleatorios sin repetir ninguno
-function getRandomNumbersList(){
+function getRandomNumbersList() {
   let randArray = [];
-  for(let i = 0; i < museos.Museum.length; i++){
+  for (let i = 0; i < museos.Museum.length; i++) {
     let rand = getRandom(museos.Museum.length);
-    while(contains(randArray, rand)){
+    while (contains(randArray, rand)) {
       rand = getRandom(museos.Museum.length);
     }
     randArray[i] = rand;
@@ -79,9 +79,9 @@ function getRandomNumbersList(){
 }
 
 //Función que comprueba si un elemento está en una lista
-function contains(arr, number){
-  for(let i = 0; i < arr.length; i++){
-    if(number == arr[i]){
+function contains(arr, number) {
+  for (let i = 0; i < arr.length; i++) {
+    if (number == arr[i]) {
       return true;
     }
   }
@@ -89,7 +89,7 @@ function contains(arr, number){
 }
 
 //Función que retorna un random entre 0 y max - 1
-function getRandom(max){
+function getRandom(max) {
   return Math.floor(Math.random() * max);
 }
 
@@ -112,7 +112,7 @@ function error(err) {
 function addClosermuseums() {
   var distancias = [];
   var distanciasAux = [];
- 
+
   //se calculan todas las distancias entre museos y ubicacion actual
   for (var i = 0; i < museos.Museum.length; i++) {
     var km = getDistanceFromLatLonInKm(userLat, userLng, museos.Museum[i]["GeoCoordinates"]["latitude"], museos.Museum[i]["GeoCoordinates"]["longitude"])
@@ -133,8 +133,8 @@ function addClosermuseums() {
   }
   //Creamos el array de museos para el slide de fotos
   let otherMuseums = [];
-  for(let i = MAX_MUSEUMS_GRID_CONTAINER; i < MAX_MUSEUMS_GRID_CONTAINER + MAX_MUSEUMS_SLIDER; i++){
-    for(let j = 0; j < distancias.length; j++){
+  for (let i = MAX_MUSEUMS_GRID_CONTAINER; i < MAX_MUSEUMS_GRID_CONTAINER + MAX_MUSEUMS_SLIDER; i++) {
+    for (let j = 0; j < distancias.length; j++) {
       if (distancias[i] == distanciasAux[j]) {
         otherMuseums[i - MAX_MUSEUMS_GRID_CONTAINER] = museos.Museum[j];
       }

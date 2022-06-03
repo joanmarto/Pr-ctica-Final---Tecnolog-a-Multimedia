@@ -78,7 +78,7 @@ function printWebPage() {
 
     //Añadimos fotos aleatorias del british
     let randoms = getRandomNumbersList(MAX_FOTOS_BRITISH, british["datosExtra"][0]["gallery"].length);
-    
+
     let randomev = getRandomNumbersList(MAX_EV_BRITISH, british["events"].length);
 
     for (let i = 0; i < MAX_FOTOS_BRITISH; i++) {
@@ -93,10 +93,10 @@ function printWebPage() {
 
         document.getElementById("descripcion_" + i.toString()).innerHTML = british["categories"][i]["description"];
         document.getElementById("titulo_" + i.toString()).innerHTML = british["categories"][i]["name"];
-       
-       
+
+
     }
-   
+
     document.getElementById("titulo_evento").innerHTML = "Eventos";
 
     for (let i = 0; i < MAX_EV_BRITISH; i++) {

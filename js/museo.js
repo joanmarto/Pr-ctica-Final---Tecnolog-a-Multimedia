@@ -60,7 +60,7 @@ function goToPage() {
 }
 
 //API del tiempo
- function loadAPIWeather() {
+function loadAPIWeather() {
 
   let temperaturaValor = document.getElementById('temperatura-valor')
   let temperaturaDescripcion = document.getElementById('temperatura-descripcion')
