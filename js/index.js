@@ -5,7 +5,7 @@ id = id.replace("#", "");
 
 //Variables
 var museos;
-var locationError = false;
+var locationError = true;
 
 //Número máximo de museos en el grid container
 const MAX_MUSEUMS_GRID_CONTAINER = 4;
@@ -27,6 +27,7 @@ xhttp.onreadystatechange = function () {
 
     museos = JSON.parse(this.responseText);
     navigator.geolocation.getCurrentPosition(success, error, options);
+    addPageContent();
   }
 }
 
@@ -97,15 +98,13 @@ function success(pos) {
   var crd = pos.coords;
   userLat = crd.latitude;
   userLng = crd.longitude;
+  locationError = false;
   //Añadimos el contenido de la página
   addPageContent();
 }
 
 function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
-  locationError = true;
-  //Añadimos el contenido de la página
-  addPageContent();
 };
 
 //Función para mostrar los museos más cercanos
