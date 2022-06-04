@@ -137,6 +137,7 @@ function loadAPIWeather() {
 
 //JSON-LD
 function initJSONLD() {
+  /*
   document.querySelector("script[type='application/ld+json']").innerHTML = `
   {
     "@context": "http://www.schema.org",
@@ -157,4 +158,26 @@ function initJSONLD() {
     "email": "${museos.Museum[id]["email"]}"
   }
     `;
+    */
+   let s = `
+   {
+     "@context": "http://www.schema.org",
+     "@type": "Museum",
+     "name": "${museos.Museum[id]["name"]}",
+     "image": "${museos.Museum[id]["image"]}",
+     "description": "${museos.Museum[id]["description"]}",
+     "sameAs": "${museos.Museum[id]["sameAs"]}",
+     "telephone": "${museos.Museum[id]["telephone"]}",
+     "openingHoursSpecification": "${museos.Museum[id]["openingHoursSpecification"]}",
+     "address": "${museos.Museum[id]["address"]}",
+     "geo": {
+       "@type":"GeoCoordinates",
+       "longitude": "${museos.Museum[id]["longitude"]}",
+       "latitude": "${museos.Museum[id]["latitude"]}"
+     },
+     "url": "${museos.Museum[id]["url"]}",
+     "email": "${museos.Museum[id]["email"]}"
+   }
+     `;
+     document.querySelector("script[type='application/ld+json']").innerHTML = JSON.stringify(s);
 }
