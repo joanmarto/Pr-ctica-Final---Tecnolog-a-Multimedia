@@ -10,7 +10,7 @@
                         "telephone": "971 735 065",
                         "openingHoursSpecification": "ABRIL A SEPTIEMBRE: Lunes: CERRADO - Martes a Sabado: 10 a 19 h - Domingos y festivos: 10 a 15 h OCTUBRE A MARZO: Lunes: CERRADO - Martes a Sabado: 10 a 18 h - Domingos y festivos: 10 a 15 h OBSERVACIONES Cerrado: 25/12, 1/1, 1/5 y Domingo de Pascua. Los horarios pueden ser modificados a causa de actos protocolarios o espectáculos organizados por el Ayuntamiento de Palma.",
                         "address": "Carrer Camilo José Cela, s/n, 07014 Palma, Illes Balears",
-                        "GeoCoordinates": {
+                        "geo": {
                                 "@type": "GeoCoordinates",
                                 "latitude": "39.56375",
                                 "longitude": "2.6193388888889"
@@ -26,7 +26,7 @@
                         "telephone": "971 402 145",
                         "openingHoursSpecification": "Martes a domingo (de 10h. a 14h.)\nLunes y festivos cerrado",
                         "address": "Carretera Dic de l'Oest, s/n, 07015 Palma, Illes Balears",
-                        "GeoCoordinates": {
+                        "geo": {
                                 "@type": "GeoCoordinates",
                                 "latitude": "39.546646",
                                 "longitude": "2.622600"
@@ -42,7 +42,7 @@
                         "telephone": "971 908 200",
                         "openingHoursSpecification": "Martes a sábado, de 10:00 a 20:00 h.\nDomingo de 10:00 a 15:00 h.\nLunes, cerrado.\nLa taquilla permanece abierta hasta 30 minutos antes de la hora de cierre.\nEl museo cierra los días 1 de enero, 1 de mayo y 25 de diciembre.",
                         "address": "Plaza Porta de Santa Catalina 10, Palma 07012",
-                        "GeoCoordinates": {
+                        "geo": {
                                 "@type": "GeoCoordinates",
                                 "latitude": "39.57",
                                 "longitude": "2.64138889"
@@ -58,7 +58,7 @@
                         "telephone": "971531166",
                         "openingHoursSpecification": "Martes a sábado, de 10:00 a 20:00 h.\nDomingo de 10:00 a 15:00 h.\nLunes, cerrado.\nLa taquilla permanece abierta hasta 30 minutos antes de la hora de cierre.\nEl museo cierra los días 1 de enero, 1 de mayo y 25 de diciembre.",
                         "address": "Carrer Pere Josep Cànaves Salas s/n, 07460 Pollença",
-                        "GeoCoordinates": {
+                        "geo": {
                                 "@type": "GeoCoordinates",
                                 "latitude": "39.87547866081173",
                                 "longitude": "3.016006914781783"
@@ -74,7 +74,7 @@
                         "telephone": "971 638 973",
                         "openingHoursSpecification": "Del 1 de noviembre al 28 de febrero de 10.30 h a 18.00 h\nLunes cerrado.",
                         "address": "Carrer Sa Lluna, 86 - 90 Sóller - Mallorca",
-                        "GeoCoordinates": {
+                        "geo": {
                                 "@type": "GeoCoordinates",
                                 "latitude": "39.76789185927415",
                                 "longitude": "2.7180540979253847"
@@ -90,7 +90,7 @@
                         "telephone": "971 713 133",
                         "openingHoursSpecification": "HORARIO DE INVIERNO (Desde el 21 de septiembre de 2021 al 31 de junio de 2022)\nLunes: de 10:00 h. - 14:00h. Área de Restauración y Conservación.\nDe Martes a Sábado: Visitas turísticas, culturales y educativas.\nMañanas: de 10:00h. - 14:00h.\nTardes: de 16:00 h. - 19 :00h.\nDomingo y festivos de apertura: de 10 a 14 horas.\nHORARIO DE VERANO (Desde el 1 de julio de 2021 al 15 de septiembre de 2022).\nLunes: de 10:00 h. - 14:00h. Área de restauración y Archivo Histórico.\nDe Martes a Sábado: Visitas turísticas, culturales y educativas.\nMañanas: de 10:00h. - 14:00h.\nTardes: de 17:00 h. - 20 :00h.\nDomingo y festivos de apertura: de 10 a 14 horas.",
                         "address": "Carrer del Mirador, 5\n(Palau Episcopal)\n07001 Palma\nIlles Balears",
-                        "GeoCoordinates": {
+                        "geo": {
                                 "@type": "GeoCoordinates",
                                 "latitude": "39.56726950803524",
                                 "longitude": "2.6490996153441"
@@ -106,7 +106,7 @@
                         "telephone": "971 71 35 15",
                         "openingHoursSpecification": "Lunes a viernes: 10 - 18:30 H\nSábado: 10:30 - 14 H\nDomingos y festivos: cerrado\nJueves y Viernes Santo: cerrado\n24 y 31 de diciembre: 10 - 14 H",
                         "address": "Carrer de Sant Miquel, 11, 07002 Palma",
-                        "GeoCoordinates": {
+                        "geo": {
                                 "@type": "GeoCoordinates",
                                 "latitude": "39.5726961998643",
                                 "longitude": "2.652085830688201"
@@ -122,7 +122,7 @@
                         "telephone": "971 63 91 58",
                         "openingHoursSpecification": "De lunes a sábado:\n09.30am a 14.00pm y 15.30pm a 16.30pm\nDomingo cerrado.",
                         "address": "Via Deià, Carretera de Valldemossa, s/n, 07179 Deià, Islas Baleares",
-                        "GeoCoordinates": {
+                        "geo": {
                                 "@type": "GeoCoordinates",
                                 "latitude": "39.75172593255301",
                                 "longitude": "2.6292674920646006"

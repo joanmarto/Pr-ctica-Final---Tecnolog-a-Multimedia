@@ -28,7 +28,7 @@ xhttp.onreadystatechange = function () {
 
 function addMap() {
   //Coordenadas del museo
-  var coord = { lat: Number(museos.Museum[id]["GeoCoordinates"]["latitude"]), lng: Number(museos.Museum[id]["GeoCoordinates"]["longitude"]) };
+  var coord = { lat: Number(museos.Museum[id]["geo"]["latitude"]), lng: Number(museos.Museum[id]["geo"]["longitude"]) };
   //Creamos el mapa
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
@@ -70,8 +70,8 @@ function loadAPIWeather() {
 
   let vientoVelocidad = document.getElementById('viento-velocidad')
 
-  let lat = museos.Museum[id]["GeoCoordinates"]["latitude"]
-  let lon = museos.Museum[id]["GeoCoordinates"]["longitude"]
+  let lat = museos.Museum[id]["geo"]["latitude"]
+  let lon = museos.Museum[id]["geo"]["longitude"]
   //Lamada a la api con la ubicación del museo    
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=91eb185b92ada1500fb25d3a3f408c92`
 
@@ -138,6 +138,7 @@ function loadAPIWeather() {
 //JSON-LD
 function initJSONLD() {
   document.querySelector("script[type='application/ld+json']").innerHTML = `
+  {
     "@context": "http://www.schema.org",
     "@type": "Museum",
     "name": "${museos.Museum[id]["name"]}",
@@ -147,12 +148,13 @@ function initJSONLD() {
     "telephone": "${museos.Museum[id]["telephone"]}",
     "openingHoursSpecification": "${museos.Museum[id]["openingHoursSpecification"]}",
     "address": "${museos.Museum[id]["address"]}",
-    "GeoCoordinates": {
+    "geo": {
       "@type":"GeoCoordinates",
       "longitude": "${museos.Museum[id]["longitude"]}",
       "latitude": "${museos.Museum[id]["latitude"]}"
     },
     "url": "${museos.Museum[id]["url"]}",
-    "email": "${museos.Museum[id]["email"]}",
+    "email": "${museos.Museum[id]["email"]}"
+  }
     `;
 }
